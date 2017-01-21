@@ -34,7 +34,7 @@ public class Tongue : MonoBehaviour {
     {
         int inputCount = 0;
 
-        if (Input.GetButtonDown("Left Player Tongue"))
+        if (Input.GetButtonDown("TongueLeft"))
         {
             inputCount++;
             if(tongueDirection > 0.5f)
@@ -43,7 +43,7 @@ public class Tongue : MonoBehaviour {
             }
             tongueDirection -= sidewaysAccelPerKeyPress;
         }
-        if (Input.GetButtonDown("Right Player Tongue"))
+        if (Input.GetButtonDown("TongueRight"))
         {
             inputCount++;
             if (tongueDirection < -0.5f)
