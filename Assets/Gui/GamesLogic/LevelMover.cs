@@ -6,10 +6,12 @@ using UnityEngine;
 
 namespace Assets.Gui.GamesLogic
 {
-    public class LevelController : MonoBehaviour
+    public class LevelMover : MonoBehaviour
     {
         private float movementY = 0.1f;
+        private float outOfScreenY = 10;
         private Vector3 position;
+        private LevelObject[] children;
 
         public void IncreaseSpeed(float speed)
         {
@@ -18,24 +20,17 @@ namespace Assets.Gui.GamesLogic
         }
         void Start()
         {
-            parentChildren();
+            setupChildren();
         }
 
-        private void parentChildren()
+        private void setupChildren()
         {
-            var children = gameObject.GetComponentsInChildren<LevelObject>();
-            Console.WriteLine("count: ", children.Length);
-            foreach (var child in children)
-            {
-                child.SetParentTransform(this.transform);
-                //child.transform.SetParent(this.transform);
-                Console.WriteLine("child: ", child);
-
-            }
+            children = gameObject.GetComponentsInChildren<LevelObject>();
         }
 
         void Update()
         {
+            //Movement of Level
             this.position = transform.position;
             this.position.y -= movementY;
             this.transform.position = position;
