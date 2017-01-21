@@ -27,11 +27,14 @@ public class MainMenu : MonoBehaviour
 
 	// Update is called once per frame
 	void Update () {
-		
-		//if (!isLoading && Input.GetButton("StartGameButton"))
-		//{
-		//	StartGame();
-		//}
+
+        //if (!isLoading && Input.GetButton("StartGameButton"))
+        //{
+        //	StartGame();
+        //}
+
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("enter") || Input.GetKeyDown("return"))
+            ButtonStartGame();
 	}
 
 	
