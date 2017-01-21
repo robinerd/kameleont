@@ -17,21 +17,38 @@ public class MainMenu : MonoBehaviour
     private List<HighScorePerson> listHighScore;
     private Boolean isSaving = false;
 
+    public bool isGameOverScreen;
+    public Text scorevalue;
+
     void Start ()
 	{
         //initHighScore();
 
         listHighScore = new List<HighScorePerson>();
         //readHighScoreFile();
+
+        int s = 9994654;
+        if (scorevalue != null)
+            scorevalue.text = s.ToString();
+
     }
 
 	// Update is called once per frame
 	void Update () {
-		
-		//if (!isLoading && Input.GetButton("StartGameButton"))
-		//{
-		//	StartGame();
-		//}
+
+        //if (!isLoading && Input.GetButton("StartGameButton"))
+        //{
+        //	StartGame();
+        //}
+
+
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("enter") || Input.GetKeyDown("return"))
+        {
+            if (!isGameOverScreen)
+                ButtonStartGame();
+            else
+                SceneManager.LoadScene("MainMenu");
+        }
 	}
 
 	
