@@ -90,21 +90,22 @@ public class Tongue : MonoBehaviour {
         }
         else
         {
-            tongueTargetVelocity = transform.position - tongueTarget.position;
+            tongueTargetVelocity = (transform.position - tongueTarget.position) * 2;
         }
         tongueTarget.position += Time.deltaTime * tongueTargetVelocity;
 
         Vector3 fromRootToTarget = tongueTarget.position - transform.position;
-        float tongueLength = fromRootToTarget.magnitude * 1.5f; //make the tongue longer than needed to get a relaxed and slurpy touch.
+        float tongueLength = fromRootToTarget.magnitude * 1.1f; //make the tongue longer than needed to get a relaxed and slurpy touch.
         float tonguePartLength = tongueLength / numberOfTongueParts;
         for (int i = 0; i < numberOfTongueParts; i++)
         {
             Transform tonguePart = transform.GetChild(i);
-            tonguePart.GetComponent<SpringJoint>().minDistance = tonguePartLength * 0;
+            tonguePart.GetComponent<SpringJoint>().minDistance = tonguePartLength;
         }
 
         Vector3 fromTipToTarget = tongueTarget.position - tongueTip.position;
         tongueTip.GetComponent<Rigidbody>().AddForce(fromTipToTarget * tongueMovementForce, ForceMode.Acceleration);
+
     }
 
 	void FixedUpdate () {
