@@ -23,13 +23,12 @@ namespace Assets.Gui.GamesLogic
         void Start()
         {
             this.body = this.gameObject.GetComponent<Rigidbody2D>();
-            this.body.velocity = new Vector2(speedX, speedY);
+            this.body.velocity = new Vector2(speedX, -speedY);
         }
 
         void Update()
         {
             //updateMovement();
-
             //Todo: Remove when out of the world!
         }
 
@@ -40,5 +39,7 @@ namespace Assets.Gui.GamesLogic
             velocity.y += speedY;
             this.body.velocity = velocity;
         }
+
+        
     }
 }

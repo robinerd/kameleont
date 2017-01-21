@@ -17,9 +17,17 @@ namespace Assets.Gui.GamesLogic
         public List<LevelObject> listGoodItems;
         public List<LevelObject> listEvilItems;
 
+        public List<SpawnPoint> listSpawnPoints;
+
+        //private List<LevelObject> listChildren;
+
+        private Boolean spawnForward = true; //false = reverse
+
+        private int spawnIndex;
+
         void Start()
         {
-            
+            //listChildren = new List<LevelObject>();
         }
 
         void Update()
@@ -32,31 +40,92 @@ namespace Assets.Gui.GamesLogic
             }
         }
 
+        private void checkChildrenPos()
+        {
+
+            //foreach (var child in listChildren)
+            //{
+            //    if (child.transform.position.y <= 0)
+            //    {
+            //        UnityEngine.Object.Destroy(child.gameObject);
+            //    }
+            //}
+        }
+
         public void SpawnRandomObject()
         {
             int chance = Random.Range(0, 100);
 
             //Debug.Log("Spawning object with chance: " + chance);
+            LevelObject newObj;
 
             if (chance > percentageGoodRequired)
             {
-                SpawnGood();
+                SpawnEvil();
             }
             else
             {
                 SpawnEvil();
             }
-
         }
 
         public void SpawnGood()
         {
-            
+            int rand = 0;
+            try
+            {
+                rand = Random.Range(0, listGoodItems.Count);
+                Debug.Log("Good rand: " + rand);
+                LevelObject newObj = UnityEngine.Object.Instantiate(listGoodItems[rand]);
+                SetPos(newObj);
+            }
+            catch(Exception e)
+            {
+                Debug.Log("good crash!: " + e.ToString());
+                Debug.Log("index: " + rand);
+                Debug.Log("items: " + listGoodItems.Count);
+            }
         }
 
         private void SpawnEvil()
         {
-            
+            int rand = 0;
+            try
+            {
+                rand = Random.Range(0, listEvilItems.Count);
+                Debug.Log("Evil rand: " + rand);
+                LevelObject newObj = UnityEngine.Object.Instantiate(listEvilItems[rand]);
+                SetPos(newObj);
+            }
+            catch (Exception e)
+            {
+                Debug.Log("Evil crash!: " + e.ToString());
+                Debug.Log("index: " + rand);
+                Debug.Log("items: " + listEvilItems.Count);
+            }
+        }
+
+        private void SetPos(LevelObject newObj)
+        {
+            newObj.transform.position = listSpawnPoints[spawnIndex].transform.position;
+
+            if (spawnForward)
+            {
+                spawnIndex++; //Forward
+            }
+            else
+            {
+                spawnIndex--; //Reverse
+            }
+
+            if (spawnIndex >= listSpawnPoints.Count)
+            {
+                spawnIndex = 0;
+            }
+            else if (spawnIndex < 0)
+            {
+                spawnIndex = 0;
+            }
         }
     }
 }
