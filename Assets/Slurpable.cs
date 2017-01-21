@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Assets.Gui.GamesLogic;
 using UnityEngine;
 
 public class Slurpable : MonoBehaviour {
@@ -9,6 +11,8 @@ public class Slurpable : MonoBehaviour {
 
     Tongue tongueRoot;
     Transform attachedToTonguePart = null;
+    public Boolean isAttached = false;
+    public LevelSpawner levelSpawner;
 
     // Use this for initialization
     void Start ()
@@ -33,6 +37,7 @@ public class Slurpable : MonoBehaviour {
             Transform tonguePart = tongueRoot.transform.GetChild(i);
             if(Vector3.Distance(tonguePart.position, transform.position) < radius)
             {
+                isAttached = true;
                 attachedToTonguePart = tonguePart;
             }
         }
@@ -48,6 +53,9 @@ public class Slurpable : MonoBehaviour {
         {
             FlowMeter.flow += flowValue;
             this.enabled = false;
+            levelSpawner.EatAndIncreaseSpawnSpeed(flowValue);
+
+            //FlowMeter.HasAddedScore(flowValue);
             //instantiate an eat effect prefab here!
             GameObject.Destroy(gameObject);
         }
