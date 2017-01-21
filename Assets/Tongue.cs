@@ -33,7 +33,7 @@ public class Tongue : MonoBehaviour {
     void Update()
     {
         // hacky snap to position behind the chameleon sprite
-        Vector3 tonguePosInSprite = transform.parent.position + Vector3.up * 0.31f;
+        Vector3 tonguePosInSprite = transform.parent.TransformPoint(Vector3.up * 0.7f);
         Ray ray = new Ray(Camera.main.transform.position, (tonguePosInSprite - Camera.main.transform.position).normalized);
         Plane slurpPlane = new Plane(-Vector3.forward, Vector3.zero);
         float depth;
