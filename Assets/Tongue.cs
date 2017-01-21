@@ -32,6 +32,14 @@ public class Tongue : MonoBehaviour {
 
     void Update()
     {
+        // hacky snap to position behind the chameleon sprite
+        Vector3 tonguePosInSprite = transform.parent.position + Vector3.up * 0.4f;
+        Ray ray = new Ray(Camera.main.transform.position, (tonguePosInSprite - Camera.main.transform.position).normalized);
+        Plane slurpPlane = new Plane(-Vector3.forward, Vector3.zero);
+        float depth;
+        slurpPlane.Raycast(ray, out depth);
+        transform.position = ray.GetPoint(depth);
+
         int inputCount = 0;
 
         if (Input.GetButtonDown("TongueLeft"))
