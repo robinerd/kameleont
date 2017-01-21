@@ -11,16 +11,33 @@ namespace Assets.Gui.GamesLogic
     /// </summary>
     public class LevelObject : MonoBehaviour
     {
-        private const float outofLevelY = 2;
-        private Boolean isKillingItself = false;
+        private const float outofLevelY = 10;
+        public float speedX;
+        public float speedY;
+
+        private Vector2 velocity;
+        private Rigidbody2D body;
 
         void start()
         {
-            
+            this.body = this.gameObject.GetComponent<Rigidbody2D>();
+            this.body.velocity = new Vector2(speedX, speedY);
+
         }
 
         void Update()
         {
+            //updateMovement();
+
+            //Todo: Remove when out of the world!
+        }
+
+        private void updateMovement()
+        {
+            velocity = this.body.velocity;
+            velocity.y += speedX;
+            velocity.y += speedY;
+            this.body.velocity = velocity;
         }
     }
 }

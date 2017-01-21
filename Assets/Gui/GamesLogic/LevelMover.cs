@@ -20,35 +20,20 @@ namespace Assets.Gui.GamesLogic
         }
         void Start()
         {
-            parentChildren();
+            setupChildren();
         }
 
-        private void parentChildren()
+        private void setupChildren()
         {
             children = gameObject.GetComponentsInChildren<LevelObject>();
         }
 
         void Update()
         {
+            //Movement of Level
             this.position = transform.position;
             this.position.y -= movementY;
             this.transform.position = position;
         }
-
-        //private void checkObjectsToKill()
-        //{
-        //    foreach (var child in children)
-        //    {
-        //        if (child.gameObject != null)
-        //        {
-        //            if (child.transform.position.y < outOfScreenY)
-        //            {
-        //                child.transform.parent = null;
-        //                Debug.Log("Killing child: " + child.name);
-        //                GameObject.Destroy(child.gameObject);
-        //            }
-        //        }
-        //    }
-        //}
     }
 }
