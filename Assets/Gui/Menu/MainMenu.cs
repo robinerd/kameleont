@@ -70,7 +70,7 @@ public class MainMenu : MonoBehaviour
 
     public void ButtonStartGame()
     {
-        //textLoading.text = "Loading!";
+        textLoading.text = "Loading!";
         SceneManager.LoadScene("Ingame");
         isLoading = true;
     }
