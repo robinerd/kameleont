@@ -11,27 +11,33 @@ namespace Assets.Gui.GamesLogic
     /// </summary>
     public class LevelObject : MonoBehaviour
     {
-        private const float outofLevelY = -10;
-        private Transform parentTransform;
-        private Boolean shouldRemoveItself = false;
+        private const float outofLevelY = 10;
+        public float speedX;
+        public float speedY;
+
+        private Vector2 velocity;
+        private Rigidbody2D body;
+
+        void start()
+        {
+            this.body = this.gameObject.GetComponent<Rigidbody2D>();
+            this.body.velocity = new Vector2(speedX, speedY);
+
+        }
 
         void Update()
         {
-            if (shouldRemoveItself && parentTransform.position.y + this.transform.position.y < outofLevelY)
-            {
-                shouldRemoveItself = true;
-                GoKillYourself();
-            }    
+            //updateMovement();
+
+            //Todo: Remove when out of the world!
         }
 
-        public void SetParentTransform(Transform parent)
+        private void updateMovement()
         {
-            this.parentTransform = parent;
-        }
-
-        private void GoKillYourself()
-        {
-            UnityEngine.Object.Destroy(this);
+            velocity = this.body.velocity;
+            velocity.y += speedX;
+            velocity.y += speedY;
+            this.body.velocity = velocity;
         }
     }
 }
