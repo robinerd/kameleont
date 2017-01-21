@@ -14,12 +14,16 @@ public class Tongue : MonoBehaviour {
     public float sidewaysAccelPerKeyPress = 0.2f; // Added to tongueDirection (always between -1 .. 1) per input press
     public float forwardAccelPerKeyPress = 0.08f;
 
+    public AudioSource soundToungeGoBackIn;
+
+
     Transform tongueTip = null;
 
     const float STOP_LICKING_COOLDOWN = 0.4f;
     float tongueDirection = 0; //positive is right, negative is left. Always between (-1 .. 1)
     float forwardMovementFactor = 0.0f; // units per second
     bool isLicking = false;
+    private bool prevLicked = false;
     float lickingInputCooldown = 0;
 
 	// Use this for initialization
@@ -78,6 +82,11 @@ public class Tongue : MonoBehaviour {
 
         if (lickingInputCooldown <= 0.0f)
         {
+            if (!prevLicked)
+            {
+                soundToungeGoBackIn.Play();
+                prevLicked = true;
+            }
             isLicking = false;
             tongueDirection = 0;
         }

@@ -16,33 +16,54 @@ namespace Assets.Gui.GamesLogic
         public float speedY;
         
         private MeshRenderer meshRenderer;
-        private Rigidbody2D body;
         private Vector2 velocity;
-
+        private Vector3 position;
 
         public Boolean isGood = true;
+        private Slurpable slurpAbleCheck;
 
         void Start()
         {
             this.meshRenderer = this.gameObject.GetComponent<MeshRenderer>();
-            meshRenderer.enabled = false;
-            this.body = this.gameObject.GetComponent<Rigidbody2D>();
-            this.body.velocity = new Vector2(speedX, -speedY);
+            this.slurpAbleCheck = this.gameObject.GetComponent<Slurpable>();
+
+            if (meshRenderer != null)
+            {
+                meshRenderer.enabled = false;
+            }
+            //this.body = this.gameObject.GetComponent<Rigidbody2D>();
+            //this.body.velocity = new Vector2(speedX, -speedY);
         }
 
         void Update()
         {
+            if (slurpAbleCheck != null)
+            {
+                if (!slurpAbleCheck.isAttached)
+                {
+                    position = this.transform.position;
+                    position.y -= speedY;
+                    this.transform.position = position;
+                }
+            }
+            else
+            {
+                position = this.transform.position;
+                position.y -= speedY;
+                this.transform.position = position;
+            }
+            
             //updateMovement();
             //Todo: Remove when out of the world!
         }
 
-        private void updateMovement()
-        {
-            velocity = this.body.velocity;
-            velocity.y += speedX;
-            velocity.y += speedY;
-            this.body.velocity = velocity;
-        }
+        //private void updateMovement()
+        //{
+        //    velocity = this.body.velocity;
+        //    velocity.y += speedX;
+        //    velocity.y += speedY;
+        //    this.body.velocity = velocity;
+        //}
 
         
     }

@@ -9,12 +9,13 @@ namespace Assets.Gui.GamesLogic
 {
     public class LevelSpawner: MonoBehaviour
     {
-        private int percentageGoodRequired = 20;
+        private int percentageGoodRequired = 5;
         private float cooldownSpawn = 0;
 
         public float cooldownPerSpawn;
 
         public List<LevelObject> listGoodItems;
+        public List<LevelObject> listNeutral;
         public List<LevelObject> listEvilItems;
 
         public List<SpawnPoint> listSpawnPoints;
@@ -64,8 +65,17 @@ namespace Assets.Gui.GamesLogic
             }
             else
             {
-                SpawnEvil();
+                int chanceStone = Random.Range(0, 20);
+                if (chanceStone == 1) //5% to spawn a stone!
+                {
+                    SpawnNeutral();
+                }
+                else
+                {
+                    SpawnEvil();
+                }
             }
+            
         }
 
         public void SpawnGood()
@@ -78,9 +88,27 @@ namespace Assets.Gui.GamesLogic
                 LevelObject newObj = UnityEngine.Object.Instantiate(listGoodItems[rand]);
                 SetPos(newObj);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.Log("good crash!: " + e.ToString());
+                Debug.Log("index: " + rand);
+                Debug.Log("items: " + listGoodItems.Count);
+            }
+        }
+
+        public void SpawnNeutral()
+        {
+            //Stones and stuff
+            int rand = 0;
+            try
+            {
+                rand = Random.Range(0, listNeutral.Count);
+                LevelObject newObj = UnityEngine.Object.Instantiate(listNeutral[rand]);
+                SetPos(newObj);
+            }
+            catch (Exception e)
+            {
+                Debug.Log("neutral crash!: " + e.ToString());
                 Debug.Log("index: " + rand);
                 Debug.Log("items: " + listGoodItems.Count);
             }
@@ -126,6 +154,36 @@ namespace Assets.Gui.GamesLogic
             {
                 spawnIndex = 0;
             }
+        }
+
+        public void EatAndIncreaseSpawnSpeed(float scoreAdd)
+        {
+            //Current score values range from 5 to 25, so this sort of makes sense
+            if (scoreAdd > 0)
+            {
+                cooldownPerSpawn -= (scoreAdd/500);
+                Debug.Log("Cooldown per spawn shortened by: " + scoreAdd / 500);
+                if (cooldownPerSpawn <= 0.05f)
+                    cooldownPerSpawn = 0.05f;
+            }
+            else
+            {
+                //No reducing of cooldown when eating bad stuff!
+                //That's for whuzzis!
+                ////Eating bad stuff increases cooldown a bit less
+                //cooldownPerSpawn -= (scoreAdd/1000);
+                //if (cooldownPerSpawn > 3)
+                //    cooldownPerSpawn = 3;
+                Debug.Log("Cooldown per spawn increased by: " + scoreAdd / 1000);
+            }
+
+            percentageGoodRequired += 5; //Per candy!
+            if (percentageGoodRequired >= 90)
+            {
+                percentageGoodRequired = 90; //at least 10% chance to get candy!
+            }
+
+            Debug.Log("Cooldown:  " + cooldownPerSpawn);
         }
     }
 }

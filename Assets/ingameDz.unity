@@ -330,6 +330,42 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.46, y: 4.46}
+--- !u!1 &208492115 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1807664783904754, guid: 449d50c9303e59048bc88e6a6ff7f45d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1115167680}
+--- !u!23 &208492116
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208492115}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!114 &239722492 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114342261320866582, guid: cbc94946b644eb1479af3f5e880a712d,
@@ -427,6 +463,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &642342436 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1055531947347502, guid: ce5d61e3f7f71fc4e8bb912c25c35331,
+    type: 2}
+  m_PrefabInternal: {fileID: 2016658667}
+--- !u!23 &642342437
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 642342436}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1001 &751441258
 Prefab:
   m_ObjectHideFlags: 0
@@ -754,7 +826,8 @@ Prefab:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 212628716649497036, guid: 449d50c9303e59048bc88e6a6ff7f45d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 449d50c9303e59048bc88e6a6ff7f45d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1116959295
@@ -821,6 +894,42 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2016658667}
   m_Script: {fileID: 11500000, guid: d2789183a8ee6494e8155b39df41cc52, type: 3}
+--- !u!1 &1489558505 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1546334044423346, guid: b4d9a91b59b719144aa53f57d8f36ff6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1881712889}
+--- !u!23 &1489558506
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489558505}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1001 &1498064602
 Prefab:
   m_ObjectHideFlags: 0
@@ -963,7 +1072,8 @@ Prefab:
       propertyPath: speedY
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 212847071449675740, guid: b4d9a91b59b719144aa53f57d8f36ff6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b4d9a91b59b719144aa53f57d8f36ff6, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1967283210 stripped
@@ -1130,6 +1240,7 @@ Prefab:
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 212155682623449338, guid: ce5d61e3f7f71fc4e8bb912c25c35331, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ce5d61e3f7f71fc4e8bb912c25c35331, type: 2}
   m_IsPrefabParent: 0

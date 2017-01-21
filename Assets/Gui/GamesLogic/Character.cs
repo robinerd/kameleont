@@ -23,6 +23,10 @@ namespace Assets.Gui.GamesLogic
 
         private Rigidbody2D body;
 
+        public float xMin;
+        public float xMax;
+        private float xDivider = 1.2f;
+
         void Start()
         {
             this.body = gameObject.GetComponent<Rigidbody2D>();
@@ -39,6 +43,19 @@ namespace Assets.Gui.GamesLogic
             alwaysReduceSpeed();
             //keepY();
             updateTongue();
+
+            //Debug.Log("this.transform.position.x: " + this.transform.position.x);
+            //Cheap camera control
+            if (this.transform.position.x < xMin)
+            {
+                this.velocity.x = speedRight / xDivider;
+            }
+
+            else if (this.transform.position.x > xMax)
+            {
+                this.velocity.x = -speedLeft / xDivider;
+            }
+
             this.body.velocity = velocity;
             //Debug.Log("speed: " + this.body.velocity.x);
         }
@@ -84,6 +101,7 @@ namespace Assets.Gui.GamesLogic
 
             if (velocity.x >= 0 && velocity.x < speedRight) //To stop the dead in its tracks movement
                 velocity.x = -speedLeft;
+
             //this.body.velocity = new Vector2(this.body.velocity.x - speedLeft, this.body.velocity.y);
             //this.transform.position = new Vector3(this.transform.position.x - speedLeft, this.transform.position.y, this.transform.position.z);
         }

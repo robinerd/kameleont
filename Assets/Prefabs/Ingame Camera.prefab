@@ -70,7 +70,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4321919212599742}
-  - component: {fileID: 212369976814574650}
   - component: {fileID: 114884940674578688}
   m_Layer: 0
   m_Name: FlowMeter
@@ -121,7 +120,7 @@ GameObject:
   - component: {fileID: 4792585738706002}
   - component: {fileID: 114451398529513090}
   - component: {fileID: 50237953203383680}
-  - component: {fileID: 61239155187551478}
+  - component: {fileID: 61761683717860120}
   m_Layer: 0
   m_Name: ChameleonTMP
   m_TagString: Untagged
@@ -308,11 +307,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dbd12e02b8d35f14b885012f00a4bba7, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 6
 --- !u!54 &54127989421114054
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -328,7 +327,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!61 &61239155187551478
+--- !u!61 &61761683717860120
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -336,12 +335,12 @@ BoxCollider2D:
   m_GameObject: {fileID: 1511034485877272}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dbd12e02b8d35f14b885012f00a4bba7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.15694948, y: 0.45112994}
 --- !u!81 &81354536078445542
 AudioListener:
   m_ObjectHideFlags: 1
@@ -388,6 +387,8 @@ MonoBehaviour:
   speedRight: 1
   movementWaitPerClick: 0.25
   velocityReduce: 0.5
+  xMin: -1
+  xMax: 1
 --- !u!114 &114665900674268358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -432,6 +433,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowLimit: 50
   maximumScaleY: 10
+  fillLeft: {fileID: 0}
+  fillRight: {fileID: 0}
+  multipliers:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114956684021696176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -443,6 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8e62a5038241a49982136d934b376a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorelabel: {fileID: 0}
 --- !u!120 &120348226501085488
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -548,41 +555,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625918686632464}
   m_Enabled: 1
---- !u!212 &212369976814574650
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1369621658704522}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: bd760fa789ec0744fad8fb0c1f6ad493, type: 3}
-  m_Color: {r: 0.9448277, g: 1, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!212 &212570843351966352
 SpriteRenderer:
   m_ObjectHideFlags: 1
