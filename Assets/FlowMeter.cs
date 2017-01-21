@@ -27,9 +27,6 @@ public class FlowMeter : MonoBehaviour {
         }
 
         flow = Mathf.Clamp(flow, -flowLimit, flowLimit);
-        //float flowFactor = calcFlowFactor();
-        //transform.localScale = new Vector3(transform.localScale.x, flowFactor * maximumScaleY, transform.localScale.z);
-        //transform.position = new Vector3(transform.position.x, flowFactor * maximumScaleY / 4, transform.position.z);
 
         var flowFill =  Mathf.InverseLerp(-flowLimit, flowLimit, flow);
         fillLeft.fillAmount = flowFill;
