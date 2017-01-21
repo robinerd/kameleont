@@ -11,27 +11,16 @@ namespace Assets.Gui.GamesLogic
     /// </summary>
     public class LevelObject : MonoBehaviour
     {
-        private const float outofLevelY = -10;
-        private Transform parentTransform;
-        private Boolean shouldRemoveItself = false;
+        private const float outofLevelY = 2;
+        private Boolean isKillingItself = false;
+
+        void start()
+        {
+            
+        }
 
         void Update()
         {
-            if (shouldRemoveItself && parentTransform.position.y + this.transform.position.y < outofLevelY)
-            {
-                shouldRemoveItself = true;
-                GoKillYourself();
-            }    
-        }
-
-        public void SetParentTransform(Transform parent)
-        {
-            this.parentTransform = parent;
-        }
-
-        private void GoKillYourself()
-        {
-            UnityEngine.Object.Destroy(this);
         }
     }
 }
