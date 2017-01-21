@@ -18,11 +18,12 @@ namespace Assets.Gui.GamesLogic
         private Vector2 velocity;
         private Rigidbody2D body;
 
-        void start()
+        public Boolean isGood = true;
+
+        void Start()
         {
             this.body = this.gameObject.GetComponent<Rigidbody2D>();
             this.body.velocity = new Vector2(speedX, speedY);
-
         }
 
         void Update()
