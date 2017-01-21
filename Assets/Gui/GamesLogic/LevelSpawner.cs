@@ -61,12 +61,12 @@ namespace Assets.Gui.GamesLogic
 
             if (chance > percentageGoodRequired)
             {
-                SpawnGood();
+                SpawnNeutral();
             }
             else
             {
-                int chanceStone = Random.Range(0, 20);
-                if (chanceStone == 1) //5% to spawn a stone!
+                int chanceStone = Random.Range(0, 10);
+                if (chanceStone == 1) //10% to spawn a stone!
                 {
                     SpawnNeutral();
                 }
