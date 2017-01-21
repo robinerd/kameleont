@@ -304,7 +304,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: dbd12e02b8d35f14b885012f00a4bba7, type: 2}
@@ -336,7 +336,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: dbd12e02b8d35f14b885012f00a4bba7, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -383,10 +383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e09afd6eefcd34592b60f050cd8a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedLeft: 1
-  speedRight: 1
+  speedLeft: 0.2
+  speedRight: 0.2
   movementWaitPerClick: 0.25
-  velocityReduce: 0.5
+  velocityReduce: 0.6
   xMin: -1
   xMax: 1
 --- !u!114 &114665900674268358
@@ -409,6 +409,7 @@ MonoBehaviour:
   tongueSpeedForward: 3
   sidewaysAccelPerKeyPress: 0.18
   forwardAccelPerKeyPress: 0.1
+  soundToungeGoBackIn: {fileID: 0}
 --- !u!114 &114794537207652742
 MonoBehaviour:
   m_ObjectHideFlags: 1

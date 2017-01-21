@@ -40,7 +40,7 @@ namespace Assets.Gui.GamesLogic
             velocity.y = 0;
             updateMovementCooldown();
             updateMovement();
-            alwaysReduceSpeed();
+            //alwaysReduceSpeed(); //Using damping on rigidbody instead of this.
             //keepY();
             updateTongue();
 
@@ -48,12 +48,12 @@ namespace Assets.Gui.GamesLogic
             //Cheap camera control
             if (this.transform.position.x < xMin)
             {
-                this.velocity.x = speedRight / xDivider;
+                this.velocity.x += speedRight / xDivider;
             }
 
             else if (this.transform.position.x > xMax)
             {
-                this.velocity.x = -speedLeft / xDivider;
+                this.velocity.x -= speedLeft / xDivider;
             }
 
             this.body.velocity = velocity;
@@ -147,6 +147,14 @@ namespace Assets.Gui.GamesLogic
         private void updateTongue()
         {
             //Robin does awesome magic here
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if(other.gameObject.CompareTag("Obstacle"))
+            {
+                FlowMeter.flow -= 20;
+            }
         }
     }
 }

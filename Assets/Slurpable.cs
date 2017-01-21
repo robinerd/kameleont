@@ -57,7 +57,7 @@ public class Slurpable : MonoBehaviour {
         }
 
         //Consume
-        if(Vector3.Distance(tongueRoot.transform.position, transform.position) < radius * 0.8f)
+        if(Vector3.Distance(tongueRoot.transform.position, transform.position) < 1.2f)
         {
             FlowMeter.flow += flowValue;
             Score.AddScore(scoreValue);

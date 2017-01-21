@@ -21,7 +21,7 @@ public class FlowMeter : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(flow <= -1.00001f)
+        if(calcFlowFactor() <= -1.00001f)
         {
             GameOver();
         }
