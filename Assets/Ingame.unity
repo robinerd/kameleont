@@ -4190,11 +4190,6 @@ Prefab:
       propertyPath: multipliers.Array.data[1]
       value: 
       objectReference: {fileID: 539647801}
-    - target: {fileID: 114884940674578688, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
-        type: 2}
-      propertyPath: flowLimit
-      value: 500
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fef342f717dddc4ba7c8ff756d3b6d0, type: 2}
   m_IsPrefabParent: 0
