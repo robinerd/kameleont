@@ -59,20 +59,23 @@ namespace Assets.Gui.GamesLogic
 
             //Debug.Log("Spawning object with chance: " + chance);
 
-            SpawnNeutral();
-
-            //if (chance > percentageGoodRequired)
-            //{
-            //    SpawnGood();
-            //}
-            //else if (Random.Range(0, 20) == 1) //5% to spawn a stone!
-            //{
-            //    SpawnNeutral();
-            //}
-            //else
-            //{
-            //    SpawnEvil();
-            //}
+            if (chance > percentageGoodRequired)
+            {
+                SpawnGood();
+            }
+            else
+            {
+                int chanceStone = Random.Range(0, 20);
+                if (chanceStone == 1) //5% to spawn a stone!
+                {
+                    SpawnNeutral();
+                }
+                else
+                {
+                    SpawnEvil();
+                }
+            }
+            
         }
 
         public void SpawnGood()

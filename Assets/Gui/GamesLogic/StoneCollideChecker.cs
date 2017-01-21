@@ -11,6 +11,7 @@ namespace Assets.Gui.GamesLogic
         private Boolean hasCollided = false;
         static int argh = 0;
         private Rigidbody2D body;
+
         void Start()
         {
             this.body = gameObject.GetComponent<Rigidbody2D>();
@@ -18,7 +19,8 @@ namespace Assets.Gui.GamesLogic
 
         void OnCollisionEnter(Collision col)
         {
-            Debug.Log("collision!: " + argh++);
+            //Debug.Log("collision!: " + argh++);
+            Debug.Log("collison: " + argh + " -: " + col.transform.position);
 
             if (col.gameObject.name == "ChameleonTMP")
             {
@@ -33,7 +35,9 @@ namespace Assets.Gui.GamesLogic
 
         void OnCollisionEnter2D(Collision2D col)
         {
-            Debug.Log("2d: " + argh++);
+            Debug.Log("2d: " + argh + " -: " + col.transform.position);
+
+            //Debug.Log("2d: " + argh++);
 
             if (col.gameObject.name == "ChameleonTMP")
             {
