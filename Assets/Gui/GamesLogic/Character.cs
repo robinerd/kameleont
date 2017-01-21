@@ -14,28 +14,32 @@ namespace Assets.Gui.GamesLogic
         public float minX;
         public float maxX;
 
+        private Vector3 velocity;
+        private float startY;
+        private Boolean resetSpeedOnReverse = false;
+
         private float movementCooldown = 0f;
         public float movementWaitPerClick;
 
         private Rigidbody2D body;
-        
-        public Character()
-        {
-            this.body = gameObject.GetComponent<Rigidbody2D>();
-            Console.WriteLine("body:", body);
-            var test = 2;
-        }
 
         void Start()
         {
+            this.body = gameObject.GetComponent<Rigidbody2D>();
+            Console.WriteLine("body:", body);
+            startY = this.transform.position.y;
         }
 
         // Update is called once per frame
         void Update()
         {
+            velocity = this.body.velocity;
+            velocity.y = 0;
             updateMovementCooldown();
             updateMovement();
+            keepY();
             updateTongue();
+            this.body.velocity = velocity;
         }
 
         private void updateMovementCooldown()
@@ -73,14 +77,29 @@ namespace Assets.Gui.GamesLogic
         private void goLeft()
         {
             movementCooldown = movementWaitPerClick;
-            this.body.velocity = new Vector2(this.body.velocity.x - speedLeft, this.body.velocity.y);
+            if (resetSpeedOnReverse && velocity.x > 0)
+                velocity.x = 0;
+            velocity.x -= speedLeft;
+            //this.body.velocity = new Vector2(this.body.velocity.x - speedLeft, this.body.velocity.y);
             //this.transform.position = new Vector3(this.transform.position.x - speedLeft, this.transform.position.y, this.transform.position.z);
         }
 
         private void goRight()
         {
             movementCooldown = movementWaitPerClick;
+            if (resetSpeedOnReverse && velocity.x < 0)
+                velocity.x = 0;
+            velocity.x += speedLeft;
+            
             //this.transform.position = new Vector3(this.transform.position.x + speedRight, this.transform.position.y, this.transform.position.z);
+        }
+
+        private void keepY()
+        {
+            //this.body.position = new Vector2(this.body.position.x, this.body.position.y);v
+            Vector3 pos = this.transform.position;
+            pos.y = startY;
+            this.transform.position = pos;
         }
 
         private void updateTongue()
