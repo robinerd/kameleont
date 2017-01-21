@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlowMeter : MonoBehaviour {
 
     public static float flow = 0;
     public float flowLimit = 50;
     public float maximumScaleY = 32;
+
+    public Image fillLeft;
+    public Image fillRight;
+    public Text[] multipliers;
 
     // Use this for initialization
     void Start() {
@@ -22,8 +27,15 @@ public class FlowMeter : MonoBehaviour {
 
         flow = Mathf.Clamp(flow, -flowLimit, flowLimit);
         float flowFactor = calcFlowFactor();
-        transform.localScale = new Vector3(transform.localScale.x, flowFactor * maximumScaleY, transform.localScale.z);
-        transform.position = new Vector3(transform.position.x, flowFactor * maximumScaleY / 4, transform.position.z);
+        //transform.localScale = new Vector3(transform.localScale.x, flowFactor * maximumScaleY, transform.localScale.z);
+        //transform.position = new Vector3(transform.position.x, flowFactor * maximumScaleY / 4, transform.position.z);
+
+        var flowFill =  Mathf.InverseLerp(-flowFactor, flowFactor, flow);
+        fillLeft.fillAmount = flowFill;
+        fillRight.fillAmount = flowFill;
+        foreach (Text t in multipliers)
+            t.text = "x " + GetMultiplier().ToString();
+
     }
 
     public void ResetFlow()
