@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1625918686632464}
   m_IsPrefabParent: 1
+--- !u!1 &1170511693757720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4768598998162874}
+  - component: {fileID: 114956684021696176}
+  m_Layer: 0
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1232520396349228
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +161,7 @@ Transform:
   - {fileID: 4321919212599742}
   - {fileID: 4422665512175780}
   - {fileID: 4792585738706002}
+  - {fileID: 4768598998162874}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -68.676, y: 0, z: 0}
@@ -212,6 +229,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4792585738706002}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4768598998162874
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170511693757720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4108891607327034}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4792585738706002
 Transform:
@@ -354,8 +384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e09afd6eefcd34592b60f050cd8a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedLeft: 0.1
-  speedRight: 0.1
+  speedLeft: 1
+  speedRight: 1
   movementWaitPerClick: 0.25
   velocityReduce: 0.5
 --- !u!114 &114665900674268358
@@ -372,11 +402,11 @@ MonoBehaviour:
   tonguePartPrefab: {fileID: 4593659565451366, guid: 66580e8ce60a23147913befd088743e1,
     type: 2}
   tongueTarget: {fileID: 4281278525210106}
-  numberOfTongueParts: 18
+  numberOfTongueParts: 20
   tongueMovementForce: 500
-  tongueSpeedSideways: 5
-  tongueSpeedForward: 8
-  sidewaysAccelPerKeyPress: 0.2
+  tongueSpeedSideways: 7
+  tongueSpeedForward: 3
+  sidewaysAccelPerKeyPress: 0.18
   forwardAccelPerKeyPress: 0.1
 --- !u!114 &114794537207652742
 MonoBehaviour:
@@ -402,6 +432,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowLimit: 50
   maximumScaleY: 10
+--- !u!114 &114956684021696176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170511693757720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8e62a5038241a49982136d934b376a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!120 &120348226501085488
 LineRenderer:
   m_ObjectHideFlags: 1

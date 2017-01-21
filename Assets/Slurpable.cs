@@ -6,6 +6,7 @@ public class Slurpable : MonoBehaviour {
 
     public float radius = 1.0f;
     public float flowValue; //Set negative flow value for bad stuff.
+    public int scoreValue; //Should probably not be negative.
 
     Tongue tongueRoot;
     Transform attachedToTonguePart = null;
@@ -47,6 +48,7 @@ public class Slurpable : MonoBehaviour {
         if(Vector3.Distance(tongueRoot.transform.position, transform.position) < radius * 0.8f)
         {
             FlowMeter.flow += flowValue;
+            Score.AddScore(scoreValue);
             this.enabled = false;
             //instantiate an eat effect prefab here!
             GameObject.Destroy(gameObject);

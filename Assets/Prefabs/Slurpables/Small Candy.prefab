@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   flowValue: 5
+  scoreValue: 20
 --- !u!212 &212650440117135800
 SpriteRenderer:
   m_ObjectHideFlags: 1
