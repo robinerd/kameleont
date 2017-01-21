@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4325359883873558}
   - component: {fileID: 212287078680666152}
   - component: {fileID: 114610558424952310}
+  - component: {fileID: 114430327089305496}
+  - component: {fileID: 114054948976116986}
   m_Layer: 0
   m_Name: Big Bomb
   m_TagString: Untagged
@@ -41,6 +43,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114054948976116986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205878092780858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617d39ddc8cea2440bcbc49b303e8c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOffset: 0
+  minAngle: 10
+  maxAngle: -6
+  axis: {x: 0, y: 1, z: 0}
+--- !u!114 &114430327089305496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205878092780858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0e1d670320b1e49a666643d5d0b3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOffset: 0
+  minScale: 0.9
+  maxScale: 1.45
 --- !u!114 &114610558424952310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,8 +83,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac6019dd687a814e8bbda98bf534d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: 0.8
   flowValue: -20
+  scoreValue: 0
 --- !u!212 &212287078680666152
 SpriteRenderer:
   m_ObjectHideFlags: 1

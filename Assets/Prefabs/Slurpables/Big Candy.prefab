@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4948686140213602}
   - component: {fileID: 212445816245043314}
   - component: {fileID: 114274729716845876}
+  - component: {fileID: 114095644435687554}
+  - component: {fileID: 114477934130524440}
   m_Layer: 0
   m_Name: Big Candy
   m_TagString: Untagged
@@ -41,6 +43,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114095644435687554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1248077303828840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0e1d670320b1e49a666643d5d0b3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOffset: 0
+  minScale: 0.9
+  maxScale: 1.45
 --- !u!114 &114274729716845876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,9 +68,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac6019dd687a814e8bbda98bf534d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: 0.7
   flowValue: 15
   scoreValue: 30
+--- !u!114 &114477934130524440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1248077303828840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617d39ddc8cea2440bcbc49b303e8c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOffset: 0
+  minAngle: 10
+  maxAngle: -6
+  axis: {x: 0, y: 1, z: 0}
 --- !u!212 &212445816245043314
 SpriteRenderer:
   m_ObjectHideFlags: 1

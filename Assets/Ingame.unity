@@ -1247,11 +1247,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 82852467917084812, guid: ade5ebcb713e3d64bbd3c644ed0b99e2,
-        type: 2}
-      propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 82852467917084812, guid: ade5ebcb713e3d64bbd3c644ed0b99e2,
         type: 2}
       propertyPath: m_audioClip
