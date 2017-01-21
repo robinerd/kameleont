@@ -10,23 +10,22 @@ namespace Assets.Gui.GamesLogic
     {
         public float speedLeft;
         public float speedRight;
+       
+        public float movementWaitPerClick;
+        public float velocityReduce;
 
-        public float minX;
-        public float maxX;
 
-        private Vector3 velocity;
+        private Vector2 velocity;
         private float startY;
         private Boolean resetSpeedOnReverse = false;
 
         private float movementCooldown = 0f;
-        public float movementWaitPerClick;
 
         private Rigidbody2D body;
 
         void Start()
         {
             this.body = gameObject.GetComponent<Rigidbody2D>();
-            Console.WriteLine("body:", body);
             startY = this.transform.position.y;
         }
 
@@ -37,9 +36,11 @@ namespace Assets.Gui.GamesLogic
             velocity.y = 0;
             updateMovementCooldown();
             updateMovement();
-            keepY();
+            alwaysReduceSpeed();
+            //keepY();
             updateTongue();
             this.body.velocity = velocity;
+            //Debug.Log("speed: " + this.body.velocity.x);
         }
 
         private void updateMovementCooldown()
@@ -79,7 +80,10 @@ namespace Assets.Gui.GamesLogic
             movementCooldown = movementWaitPerClick;
             if (resetSpeedOnReverse && velocity.x > 0)
                 velocity.x = 0;
-            velocity.x -= speedLeft;
+            velocity.x -= speedLeft; //Todo: Use time.delta here?
+
+            if (velocity.x >= 0 && velocity.x < speedRight) //To stop the dead in its tracks movement
+                velocity.x = -speedLeft;
             //this.body.velocity = new Vector2(this.body.velocity.x - speedLeft, this.body.velocity.y);
             //this.transform.position = new Vector3(this.transform.position.x - speedLeft, this.transform.position.y, this.transform.position.z);
         }
@@ -89,8 +93,11 @@ namespace Assets.Gui.GamesLogic
             movementCooldown = movementWaitPerClick;
             if (resetSpeedOnReverse && velocity.x < 0)
                 velocity.x = 0;
-            velocity.x += speedLeft;
-            
+            velocity.x += speedRight; //Todo: Use time.delta here?
+
+            if (velocity.x <= 0 && velocity.x > -speedLeft) //To stop the dead in its tracks movement
+                velocity.x = speedRight;
+
             //this.transform.position = new Vector3(this.transform.position.x + speedRight, this.transform.position.y, this.transform.position.z);
         }
 
@@ -100,6 +107,23 @@ namespace Assets.Gui.GamesLogic
             Vector3 pos = this.transform.position;
             pos.y = startY;
             this.transform.position = pos;
+        }
+
+        private void alwaysReduceSpeed()
+        {
+            //Shitty if cases, but aint got no time to use cool unity stuff!
+            if (velocity.x < 0)
+            {
+                this.velocity.x += velocityReduce * Time.deltaTime;
+                if (this.velocity.x > 0)
+                    this.velocity.x = 0;
+            }
+            else if (this.velocity.x > 0)
+            {
+                this.velocity.x -= velocityReduce * Time.deltaTime;
+                if (this.velocity.x < 0)
+                    this.velocity.x = 0;
+            }
         }
 
         private void updateTongue()
