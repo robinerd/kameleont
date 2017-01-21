@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
         listHighScore = new List<HighScorePerson>();
         //readHighScoreFile();
 
-        int s = 9994654;
+	    int s = Score.score;
         if (scorevalue != null)
             scorevalue.text = s.ToString();
 
