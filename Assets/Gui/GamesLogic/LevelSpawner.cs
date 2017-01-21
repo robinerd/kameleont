@@ -57,11 +57,10 @@ namespace Assets.Gui.GamesLogic
             int chance = Random.Range(0, 100);
 
             //Debug.Log("Spawning object with chance: " + chance);
-            LevelObject newObj;
 
             if (chance > percentageGoodRequired)
             {
-                SpawnEvil();
+                SpawnGood();
             }
             else
             {
@@ -75,7 +74,7 @@ namespace Assets.Gui.GamesLogic
             try
             {
                 rand = Random.Range(0, listGoodItems.Count);
-                Debug.Log("Good rand: " + rand);
+                //Debug.Log("Good rand: " + rand);
                 LevelObject newObj = UnityEngine.Object.Instantiate(listGoodItems[rand]);
                 SetPos(newObj);
             }
@@ -93,7 +92,7 @@ namespace Assets.Gui.GamesLogic
             try
             {
                 rand = Random.Range(0, listEvilItems.Count);
-                Debug.Log("Evil rand: " + rand);
+                //Debug.Log("Evil rand: " + rand);
                 LevelObject newObj = UnityEngine.Object.Instantiate(listEvilItems[rand]);
                 SetPos(newObj);
             }
@@ -108,6 +107,7 @@ namespace Assets.Gui.GamesLogic
         private void SetPos(LevelObject newObj)
         {
             newObj.transform.position = listSpawnPoints[spawnIndex].transform.position;
+            newObj.transform.rotation = new Quaternion(0, 0, 0, 1);
 
             if (spawnForward)
             {

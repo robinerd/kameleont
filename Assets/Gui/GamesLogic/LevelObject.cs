@@ -14,14 +14,18 @@ namespace Assets.Gui.GamesLogic
         private const float outofLevelY = 10;
         public float speedX;
         public float speedY;
-
-        private Vector2 velocity;
+        
+        private MeshRenderer meshRenderer;
         private Rigidbody2D body;
+        private Vector2 velocity;
+
 
         public Boolean isGood = true;
 
         void Start()
         {
+            this.meshRenderer = this.gameObject.GetComponent<MeshRenderer>();
+            meshRenderer.enabled = false;
             this.body = this.gameObject.GetComponent<Rigidbody2D>();
             this.body.velocity = new Vector2(speedX, -speedY);
         }

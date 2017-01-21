@@ -34,12 +34,7 @@ public class MainMenu : MonoBehaviour
 		//}
 	}
 
-	public void StartGame()
-	{
-		textLoading.text = "Loading!";
-		SceneManager.LoadScene("ingameDz");
-		isLoading = true;
-	}
+	
 
 	private void initHighScore()
 	{
@@ -56,12 +51,24 @@ public class MainMenu : MonoBehaviour
 		//string highscore = File.ReadAllText("playerprogress/highscores.txt");
 	}
 
-	public void ButtonHighScores()
+    public void ButtonStartGame()
+    {
+        //textLoading.text = "Loading!";
+        SceneManager.LoadScene("Ingame");
+        isLoading = true;
+    }
+
+    public void ButtonCredits()
+    {
+        
+    }
+
+    public void ButtonHighScores()
 	{
 		SceneManager.LoadScene("HighScoreMenu");
 	}
 
-	public void ButtonExit()
+	public void ButtonQuit()
 	{
 		Application.Quit();
 	}
