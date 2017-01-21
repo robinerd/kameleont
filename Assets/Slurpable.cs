@@ -15,6 +15,9 @@ public class Slurpable : MonoBehaviour {
     public Boolean isAttached = false;
     public LevelSpawner levelSpawner;
 
+    public AudioSource soundLick;
+    public AudioSource soundEat;
+
     // Use this for initialization
     void Start ()
     {
@@ -38,6 +41,10 @@ public class Slurpable : MonoBehaviour {
             Transform tonguePart = tongueRoot.transform.GetChild(i);
             if(Vector3.Distance(tonguePart.position, transform.position) < radius)
             {
+                if (!isAttached)
+                {
+                    soundLick.Play();
+                }
                 isAttached = true;
                 attachedToTonguePart = tonguePart;
             }
@@ -59,6 +66,7 @@ public class Slurpable : MonoBehaviour {
 
             //FlowMeter.HasAddedScore(flowValue);
             //instantiate an eat effect prefab here!
+            soundEat.Play();
             GameObject.Destroy(gameObject);
         }
 	}

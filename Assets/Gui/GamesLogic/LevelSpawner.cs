@@ -9,7 +9,7 @@ namespace Assets.Gui.GamesLogic
 {
     public class LevelSpawner: MonoBehaviour
     {
-        private int percentageGoodRequired = 20;
+        private int percentageGoodRequired = 5;
         private float cooldownSpawn = 0;
 
         public float cooldownPerSpawn;
@@ -165,16 +165,24 @@ namespace Assets.Gui.GamesLogic
                 Debug.Log("Cooldown per spawn shortened by: " + scoreAdd / 500);
                 if (cooldownPerSpawn <= 0.05f)
                     cooldownPerSpawn = 0.05f;
-
             }
             else
             {
-                //Eating bad stuff increases cooldown a bit less
-                cooldownPerSpawn -= (scoreAdd/1000);
-                if (cooldownPerSpawn > 3)
-                    cooldownPerSpawn = 3;
+                //No reducing of cooldown when eating bad stuff!
+                //That's for whuzzis!
+                ////Eating bad stuff increases cooldown a bit less
+                //cooldownPerSpawn -= (scoreAdd/1000);
+                //if (cooldownPerSpawn > 3)
+                //    cooldownPerSpawn = 3;
                 Debug.Log("Cooldown per spawn increased by: " + scoreAdd / 1000);
             }
+
+            percentageGoodRequired += 5; //Per candy!
+            if (percentageGoodRequired >= 90)
+            {
+                percentageGoodRequired = 90; //at least 10% chance to get candy!
+            }
+
             Debug.Log("Cooldown:  " + cooldownPerSpawn);
         }
     }
