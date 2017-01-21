@@ -9,57 +9,93 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1279989590579882}
+  m_RootGameObject: {fileID: 1055531947347502}
   m_IsPrefabParent: 1
---- !u!1 &1279989590579882
+--- !u!1 &1055531947347502
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4056439088473234}
-  - component: {fileID: 212517163321884744}
-  - component: {fileID: 114587642215050964}
+  - component: {fileID: 4366026555595582}
+  - component: {fileID: 114236334333035330}
+  - component: {fileID: 212155682623449338}
+  - component: {fileID: 50791450211521648}
+  - component: {fileID: 61539841738474028}
   m_Layer: 0
-  m_Name: FlowMeter
+  m_Name: Good_Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4056439088473234
+--- !u!4 &4366026555595582
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279989590579882}
+  m_GameObject: {fileID: 1055531947347502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.48, y: 0, z: -4}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_LocalPosition: {x: 5.78, y: 0.6944472, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114587642215050964
+--- !u!50 &50791450211521648
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055531947347502}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &61539841738474028
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055531947347502}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.016452312, y: -0.016453266}
+  serializedVersion: 2
+  m_Size: {x: 4.537935, y: 4.392808}
+--- !u!114 &114236334333035330
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279989590579882}
+  m_GameObject: {fileID: 1055531947347502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0adcfd726ac0dd4e899797a206955be, type: 3}
+  m_Script: {fileID: 11500000, guid: d2789183a8ee6494e8155b39df41cc52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowLimit: 50
-  maximumScaleY: 10
---- !u!212 &212517163321884744
+  speedX: 0
+  speedY: 2
+--- !u!212 &212155682623449338
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279989590579882}
+  m_GameObject: {fileID: 1055531947347502}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,7 +121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bd760fa789ec0744fad8fb0c1f6ad493, type: 3}
-  m_Color: {r: 0.9448277, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 13c4ad4d9463b8147adec259ce50f890, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
