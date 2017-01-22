@@ -37,7 +37,7 @@ public class FlowMeter : MonoBehaviour {
         fillRight.fillAmount = flowFill;
         foreach (Text t in multipliers)
         {
-            t.text = "x " + string.Format("{0:0.##}", GetMultiplier());
+            t.text = "x " + string.Format("{0:0.##}", GetMultiplier()).Replace(".", ".  ");
         }
 
     }
