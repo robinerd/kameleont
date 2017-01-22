@@ -9,7 +9,7 @@ namespace Assets.Gui.GamesLogic
 {
     public class LevelSpawner: MonoBehaviour
     {
-        private int percentageGoodRequired = 40;
+        private int percentageGoodRequired = 5;
         private float cooldownSpawn = 0;
 
         public float cooldownPerSpawn;
@@ -168,7 +168,7 @@ namespace Assets.Gui.GamesLogic
             //Current score values range from 5 to 25, so this sort of makes sense
             if (scoreAdd > 0)
             {
-                cooldownPerSpawn -= (scoreAdd/500);
+                cooldownPerSpawn -= (scoreAdd/1000);
                 Debug.Log("Cooldown per spawn shortened by: " + scoreAdd / 500);
                 if (cooldownPerSpawn <= 0.05f)
                     cooldownPerSpawn = 0.05f;
@@ -184,10 +184,10 @@ namespace Assets.Gui.GamesLogic
                 Debug.Log("Cooldown per spawn increased by: " + scoreAdd / 1000);
             }
 
-            percentageGoodRequired += 5; //Per candy!
-            if (percentageGoodRequired >= 90)
+            percentageGoodRequired += 3; //Per candy!
+            if (percentageGoodRequired >= 70)
             {
-                percentageGoodRequired = 90; //at least 10% chance to get candy!
+                percentageGoodRequired = 70; //at least 10% chance to get candy!
             }
 
             Debug.Log("Cooldown:  " + cooldownPerSpawn);

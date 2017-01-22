@@ -577,6 +577,11 @@ Prefab:
       propertyPath: soundEat
       value: 
       objectReference: {fileID: 537750959}
+    - target: {fileID: 114175180317648888, guid: eec1b5b1c85ae214e9715708315eedce,
+        type: 2}
+      propertyPath: flowValue
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eec1b5b1c85ae214e9715708315eedce, type: 2}
   m_IsPrefabParent: 0
@@ -2303,6 +2308,11 @@ Prefab:
       propertyPath: soundEat
       value: 
       objectReference: {fileID: 1871815097}
+    - target: {fileID: 114776455859619612, guid: b111a347f15913a4fa32c8b1347b6910,
+        type: 2}
+      propertyPath: flowValue
+      value: -25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b111a347f15913a4fa32c8b1347b6910, type: 2}
   m_IsPrefabParent: 0
@@ -3354,6 +3364,11 @@ Prefab:
       propertyPath: soundEat
       value: 
       objectReference: {fileID: 1871815097}
+    - target: {fileID: 114770492701998688, guid: 48e5f715e175854448899d9223a8b869,
+        type: 2}
+      propertyPath: flowValue
+      value: -25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48e5f715e175854448899d9223a8b869, type: 2}
   m_IsPrefabParent: 0
@@ -3892,6 +3907,11 @@ Prefab:
       propertyPath: soundEat
       value: 
       objectReference: {fileID: 537750959}
+    - target: {fileID: 114162330297302014, guid: caabfaac7cd0d3147a34ed7156adfa72,
+        type: 2}
+      propertyPath: flowValue
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: caabfaac7cd0d3147a34ed7156adfa72, type: 2}
   m_IsPrefabParent: 0
@@ -4190,6 +4210,16 @@ Prefab:
       propertyPath: multipliers.Array.data[1]
       value: 
       objectReference: {fileID: 539647801}
+    - target: {fileID: 114451398529513090, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
+        type: 2}
+      propertyPath: speedLeft
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451398529513090, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
+        type: 2}
+      propertyPath: speedRight
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fef342f717dddc4ba7c8ff756d3b6d0, type: 2}
   m_IsPrefabParent: 0

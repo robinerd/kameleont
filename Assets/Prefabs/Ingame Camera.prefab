@@ -304,7 +304,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.4
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: dbd12e02b8d35f14b885012f00a4bba7, type: 2}
@@ -383,12 +383,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e09afd6eefcd34592b60f050cd8a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedLeft: 0.2
-  speedRight: 0.2
-  movementWaitPerClick: 0.25
+  speedLeft: 0.4
+  speedRight: 0.4
+  movementWaitPerClick: 0.2
   velocityReduce: 0.6
-  xMin: -1
-  xMax: 1
+  xMin: -0.7
+  xMax: 0.7
 --- !u!114 &114665900674268358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0adcfd726ac0dd4e899797a206955be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowLimit: 50
+  flowLimit: 100
   maximumScaleY: 10
   fillLeft: {fileID: 0}
   fillRight: {fileID: 0}

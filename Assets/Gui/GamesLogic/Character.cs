@@ -38,115 +38,38 @@ namespace Assets.Gui.GamesLogic
         {
             velocity = this.body.velocity;
             velocity.y = 0;
-            updateMovementCooldown();
             updateMovement();
-            //alwaysReduceSpeed(); //Using damping on rigidbody instead of this.
-            //keepY();
-            updateTongue();
 
             //Debug.Log("this.transform.position.x: " + this.transform.position.x);
             //Cheap camera control
-            if (this.transform.position.x < xMin)
-            {
-                this.velocity.x += speedRight / xDivider;
-            }
 
-            else if (this.transform.position.x > xMax)
+            if ((this.transform.position.x < xMin && velocity.x < 0) ||
+                (this.transform.position.x > xMax && velocity.x > 0))
             {
-                this.velocity.x -= speedLeft / xDivider;
+                this.velocity.x = 0;
             }
-
             this.body.velocity = velocity;
             //Debug.Log("speed: " + this.body.velocity.x);
         }
 
-        private void updateMovementCooldown()
-        {
-            if (movementCooldown > 0f)
-            {
-                this.movementCooldown -= Time.deltaTime;
-                if (this.movementCooldown < 0f)
-                    this.movementCooldown = 0;
-            }
-        }
-
         private void updateMovement()
         {
-            bool left = Input.GetButtonDown("MoveLeft");
-            bool right = Input.GetButtonDown("MoveRight");
+            bool left = Input.GetButton("MoveLeft");
+            bool right = Input.GetButton("MoveRight");
 
             //No movement if both, making sure of it with zeh code!
-            if (movementCooldown <= 0)
+            velocity.x = 0;
+            if ((left && right) == false)
             {
-                if ((left && right) == false)
+                if (left)
                 {
-                    if (left)
-                    {
-                        goLeft();
-                    }
-                    else if (right)
-                    {
-                        goRight();
-                    }
+                    velocity.x = -speedLeft; //Todo: Use time.delta here?
+                }
+                else if (right)
+                {
+                    velocity.x = speedRight; //Todo: Use time.delta here?
                 }
             }
-        }
-
-        private void goLeft()
-        {
-            movementCooldown = movementWaitPerClick;
-            if (resetSpeedOnReverse && velocity.x > 0)
-                velocity.x = 0;
-            velocity.x -= speedLeft; //Todo: Use time.delta here?
-
-            if (velocity.x >= 0 && velocity.x < speedRight) //To stop the dead in its tracks movement
-                velocity.x = -speedLeft;
-
-            //this.body.velocity = new Vector2(this.body.velocity.x - speedLeft, this.body.velocity.y);
-            //this.transform.position = new Vector3(this.transform.position.x - speedLeft, this.transform.position.y, this.transform.position.z);
-        }
-
-        private void goRight()
-        {
-            movementCooldown = movementWaitPerClick;
-            if (resetSpeedOnReverse && velocity.x < 0)
-                velocity.x = 0;
-            velocity.x += speedRight; //Todo: Use time.delta here?
-
-            if (velocity.x <= 0 && velocity.x > -speedLeft) //To stop the dead in its tracks movement
-                velocity.x = speedRight;
-
-            //this.transform.position = new Vector3(this.transform.position.x + speedRight, this.transform.position.y, this.transform.position.z);
-        }
-
-        private void keepY()
-        {
-            //this.body.position = new Vector2(this.body.position.x, this.body.position.y);v
-            Vector3 pos = this.transform.position;
-            pos.y = startY;
-            this.transform.position = pos;
-        }
-
-        private void alwaysReduceSpeed()
-        {
-            //Shitty if cases, but aint got no time to use cool unity stuff!
-            if (velocity.x < 0)
-            {
-                this.velocity.x += velocityReduce * Time.deltaTime;
-                if (this.velocity.x > 0)
-                    this.velocity.x = 0;
-            }
-            else if (this.velocity.x > 0)
-            {
-                this.velocity.x -= velocityReduce * Time.deltaTime;
-                if (this.velocity.x < 0)
-                    this.velocity.x = 0;
-            }
-        }
-
-        private void updateTongue()
-        {
-            //Robin does awesome magic here
         }
 
         void OnTriggerEnter(Collider other)
