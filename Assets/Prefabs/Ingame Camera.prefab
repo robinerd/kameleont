@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 92700397520971118}
   - component: {fileID: 124241138022837136}
   - component: {fileID: 81354536078445542}
+  - component: {fileID: 114177880488603520}
   m_Layer: 0
   m_Name: Ingame Camera
   m_TagString: MainCamera
@@ -372,6 +373,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114177880488603520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625918686632464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0
+  intensity: 1
+  blurSize: 1
+  blurIterations: 1
+  blurType: 0
+  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
 --- !u!114 &114451398529513090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,8 +401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e09afd6eefcd34592b60f050cd8a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedLeft: 0.4
-  speedRight: 0.4
+  speedLeft: 0.6
+  speedRight: 0.6
   movementWaitPerClick: 0.2
   velocityReduce: 0.6
   xMin: -0.7
@@ -590,7 +608,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 312952fcf9eb05f48be2d695497bfd1e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212799235783444826
