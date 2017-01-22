@@ -149,7 +149,7 @@ public class Tongue : MonoBehaviour {
 
     public void HitObstacle()
     {
-        Score.AddScore(-5000);
+        Score.AddScore(-2000);
         hitStoneSound.Play();
         GetComponent<ParticleSystem>().Play();
     }
