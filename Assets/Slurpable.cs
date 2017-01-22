@@ -44,6 +44,9 @@ public class Slurpable : MonoBehaviour {
                 if (!isAttached)
                 {
                     soundLick.Play();
+                    FlowMeter.flow += flowValue;
+                    Score.AddScore(scoreValue);
+                    levelSpawner.EatAndIncreaseSpawnSpeed(flowValue);
                 }
                 isAttached = true;
                 attachedToTonguePart = tonguePart;
@@ -59,11 +62,7 @@ public class Slurpable : MonoBehaviour {
         //Consume
         if(Vector3.Distance(tongueRoot.transform.position, transform.position) < 1.2f)
         {
-            FlowMeter.flow += flowValue;
-            Score.AddScore(scoreValue);
             this.enabled = false;
-            levelSpawner.EatAndIncreaseSpawnSpeed(flowValue);
-
             //FlowMeter.HasAddedScore(flowValue);
             //instantiate an eat effect prefab here!
             soundEat.Play();

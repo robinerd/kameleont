@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
         //}
 
 
-        if (Input.GetKeyDown("space") || Input.GetKeyDown("enter") || Input.GetKeyDown("return"))
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("enter") || Input.GetKeyDown("return") || Input.GetButtonDown("GoToMainMenu"))
         {
             if (!isGameOverScreen)
                 ButtonStartGame();
