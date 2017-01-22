@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour
 
 	    if (!isGameOverScreen)
 	    {
-	        if (Input.GetKeyDown("enter") || Input.GetKeyDown("return") || Input.GetButtonDown("GoToMainMenu"))
+	        if (Input.GetKeyDown("enter") || Input.GetKeyDown("return"))
 	        {
 	            ButtonStartGame();
 	        }
@@ -92,12 +92,6 @@ public class MainMenu : MonoBehaviour
                 }
                 listPersons = sortListByNumber(listPersons); //Sorting!
 
-                //All players read, todo sort!
-                foreach (var person in listPersons)
-                {
-                    Debug.Log("PErson: " + "score: " + person.scoreNr + ": " + person.Name);
-                }
-
                 int maxRead = listPersons.Count;
                 if (maxRead > 6)
                     maxRead = 6;
@@ -131,11 +125,6 @@ public class MainMenu : MonoBehaviour
             }
         }
         return listPeople;
-    }
-
-    private void sortScores()
-    {
-        
     }
 
     public void ButtonStartGame()
