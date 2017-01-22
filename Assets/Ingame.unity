@@ -1785,6 +1785,11 @@ Transform:
   m_Father: {fileID: 894105181}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &987972083 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82266447022653256, guid: bd04e8b8c9dea8e408c81f53f42c9840,
+    type: 2}
+  m_PrefabInternal: {fileID: 1953387966}
 --- !u!114 &997064630 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114637726357422604, guid: 18bf9de3bc43fa7469edbfd2f65d093e,
@@ -2708,6 +2713,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1590783618 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82221984500536810, guid: bd04e8b8c9dea8e408c81f53f42c9840,
+    type: 2}
+  m_PrefabInternal: {fileID: 1953387966}
 --- !u!1 &1598527373
 GameObject:
   m_ObjectHideFlags: 0
@@ -4189,6 +4199,16 @@ Prefab:
       propertyPath: scorelabel
       value: 
       objectReference: {fileID: 1089377168}
+    - target: {fileID: 114665900674268358, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
+        type: 2}
+      propertyPath: tongueRetractSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 987972083}
+    - target: {fileID: 114665900674268358, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
+        type: 2}
+      propertyPath: tongueRetractSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 1590783618}
     - target: {fileID: 114884940674578688, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
         type: 2}
       propertyPath: fillLeft
