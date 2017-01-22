@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4620425656377226}
   - component: {fileID: 114454408068053794}
-  - component: {fileID: 114872156475478034}
   m_Layer: 0
   m_Name: Stone4
   m_TagString: Obstacle
@@ -38,6 +37,8 @@ GameObject:
   - component: {fileID: 4839160651512410}
   - component: {fileID: 33251954126795454}
   - component: {fileID: 23841667392965636}
+  - component: {fileID: 114061398747882326}
+  - component: {fileID: 65716669366551666}
   m_Layer: 0
   m_Name: Stubbe
   m_TagString: Untagged
@@ -110,6 +111,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1743670053301866}
   m_Mesh: {fileID: 4300000, guid: e7d4d2e33b6a5c5498caf0b5683a641f, type: 3}
+--- !u!65 &65716669366551666
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743670053301866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2241104, y: 1.1588415, z: 1.1058209}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114061398747882326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743670053301866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6227fe57f385da34483c99a15b739d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114454408068053794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,14 +146,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGood: 0
---- !u!114 &114872156475478034
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1126762673584466}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6227fe57f385da34483c99a15b739d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
