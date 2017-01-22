@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.8235294, g: 0.50865054, b: 0.649276, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogStart: 3
+  m_LinearFogEnd: 75
   m_AmbientSkyColor: {r: 0.22794116, g: 0.22794116, b: 0.22794116, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -663,28 +663,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 363553836}
   m_Script: {fileID: 11500000, guid: 7c02c548eb79cf240b1879058939555b, type: 3}
---- !u!1 &342567780 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1625918686632464, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
-    type: 2}
-  m_PrefabInternal: {fileID: 2006119844}
---- !u!114 &342567786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 342567780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  threshold: 0
-  intensity: 1
-  blurSize: 1
-  blurIterations: 1
-  blurType: 0
-  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
 --- !u!1001 &363553836
 Prefab:
   m_ObjectHideFlags: 0
@@ -4217,11 +4195,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd04e8b8c9dea8e408c81f53f42c9840, type: 2}
   m_IsPrefabParent: 0
---- !u!82 &1960366148 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82221984500536810, guid: bd04e8b8c9dea8e408c81f53f42c9840,
-    type: 2}
-  m_PrefabInternal: {fileID: 1953387966}
 --- !u!1001 &2006119844
 Prefab:
   m_ObjectHideFlags: 0
@@ -4261,6 +4234,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114956684021696176, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
+        type: 2}
+      propertyPath: scorelabel
+      value: 
+      objectReference: {fileID: 1089377168}
     - target: {fileID: 114884940674578688, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
         type: 2}
       propertyPath: fillLeft
@@ -4281,35 +4259,6 @@ Prefab:
       propertyPath: multipliers.Array.data[1]
       value: 
       objectReference: {fileID: 539647801}
-    - target: {fileID: 114665900674268358, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
-        type: 2}
-      propertyPath: soundToungeGoBackIn
-      value: 
-      objectReference: {fileID: 1960366148}
-    - target: {fileID: 114956684021696176, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
-        type: 2}
-      propertyPath: scorelabel
-      value: 
-      objectReference: {fileID: 1089377168}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212570843351966352, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.5294118
-      objectReference: {fileID: 0}
-    - target: {fileID: 212570843351966352, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.5294118
-      objectReference: {fileID: 0}
-    - target: {fileID: 212570843351966352, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5294118
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fef342f717dddc4ba7c8ff756d3b6d0, type: 2}
   m_IsPrefabParent: 0
