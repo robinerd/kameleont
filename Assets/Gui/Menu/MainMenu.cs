@@ -42,13 +42,17 @@ public class MainMenu : MonoBehaviour
         //}
 
 
-        if (Input.GetKeyDown("space") || Input.GetKeyDown("enter") || Input.GetKeyDown("return") || Input.GetButtonDown("GoToMainMenu"))
-        {
-            if (!isGameOverScreen)
-                ButtonStartGame();
-            else
-                SceneManager.LoadScene("MainMenu");
-        }
+	    if (!isGameOverScreen)
+	    {
+	        if (Input.GetKeyDown("enter") || Input.GetKeyDown("return") || Input.GetButtonDown("GoToMainMenu"))
+	        {
+	            ButtonStartGame();
+	        }
+	    }
+	    else if (Input.GetButtonDown("GoToMainMenu"))
+	    {
+	        SceneManager.LoadScene("MainMenu");
+	    }
 	}
 
     private void ReadHighScore()

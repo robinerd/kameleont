@@ -435,6 +435,7 @@ MonoBehaviour:
   textHighScore: {fileID: 0}
   isGameOverScreen: 1
   scorevalue: {fileID: 1387971068}
+  HighScorePlayers: {fileID: 0}
 --- !u!4 &263900645
 Transform:
   m_ObjectHideFlags: 0
@@ -572,14 +573,14 @@ RectTransform:
   m_GameObject: {fileID: 474365073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 817437862}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 123}
   m_SizeDelta: {x: 790, y: 790}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474365075
