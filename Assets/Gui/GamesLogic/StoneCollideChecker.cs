@@ -16,7 +16,7 @@ namespace Assets.Gui.GamesLogic
         void Update() {
             //if (Vector3.Distance(tongueRoot.transform.position, transform.position) < 1.2f)
             {
-                COMING SOON
+                //COMING SOON
             }
         }
     }
