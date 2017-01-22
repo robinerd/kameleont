@@ -591,15 +591,6 @@ Prefab:
       propertyPath: levelSpawner
       value: 
       objectReference: {fileID: 72961477}
-    - target: {fileID: 1113671971473744, guid: eec1b5b1c85ae214e9715708315eedce, type: 2}
-      propertyPath: m_Name
-      value: CandySmall
-      objectReference: {fileID: 0}
-    - target: {fileID: 114175180317648888, guid: eec1b5b1c85ae214e9715708315eedce,
-        type: 2}
-      propertyPath: soundEat
-      value: 
-      objectReference: {fileID: 537750959}
     - target: {fileID: 114175180317648888, guid: eec1b5b1c85ae214e9715708315eedce,
         type: 2}
       propertyPath: soundLick
@@ -607,19 +598,9 @@ Prefab:
       objectReference: {fileID: 265917920}
     - target: {fileID: 114175180317648888, guid: eec1b5b1c85ae214e9715708315eedce,
         type: 2}
-      propertyPath: flowValue
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114175180317648888, guid: eec1b5b1c85ae214e9715708315eedce,
-        type: 2}
-      propertyPath: scoreValue
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114317034534772558, guid: eec1b5b1c85ae214e9715708315eedce,
-        type: 2}
-      propertyPath: speedY
-      value: 0.1
-      objectReference: {fileID: 0}
+      propertyPath: soundEat
+      value: 
+      objectReference: {fileID: 537750959}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eec1b5b1c85ae214e9715708315eedce, type: 2}
   m_IsPrefabParent: 0
@@ -2200,6 +2181,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbc94946b644eb1479af3f5e880a712d, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &1247413370 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82266447022653256, guid: bd04e8b8c9dea8e408c81f53f42c9840,
+    type: 2}
+  m_PrefabInternal: {fileID: 1953387966}
 --- !u!1 &1330946745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,29 +2329,14 @@ Prefab:
       objectReference: {fileID: 72961477}
     - target: {fileID: 114776455859619612, guid: b111a347f15913a4fa32c8b1347b6910,
         type: 2}
-      propertyPath: soundEat
-      value: 
-      objectReference: {fileID: 1871815097}
-    - target: {fileID: 114776455859619612, guid: b111a347f15913a4fa32c8b1347b6910,
-        type: 2}
       propertyPath: soundLick
       value: 
       objectReference: {fileID: 143804945}
     - target: {fileID: 114776455859619612, guid: b111a347f15913a4fa32c8b1347b6910,
         type: 2}
-      propertyPath: flowValue
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114776455859619612, guid: b111a347f15913a4fa32c8b1347b6910,
-        type: 2}
-      propertyPath: scoreValue
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114873938049155334, guid: b111a347f15913a4fa32c8b1347b6910,
-        type: 2}
-      propertyPath: speedY
-      value: 0.1
-      objectReference: {fileID: 0}
+      propertyPath: soundEat
+      value: 
+      objectReference: {fileID: 1871815097}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b111a347f15913a4fa32c8b1347b6910, type: 2}
   m_IsPrefabParent: 0
@@ -3409,29 +3380,14 @@ Prefab:
       objectReference: {fileID: 72961477}
     - target: {fileID: 114770492701998688, guid: 48e5f715e175854448899d9223a8b869,
         type: 2}
-      propertyPath: soundEat
-      value: 
-      objectReference: {fileID: 1871815097}
-    - target: {fileID: 114770492701998688, guid: 48e5f715e175854448899d9223a8b869,
-        type: 2}
       propertyPath: soundLick
       value: 
       objectReference: {fileID: 29392273}
     - target: {fileID: 114770492701998688, guid: 48e5f715e175854448899d9223a8b869,
         type: 2}
-      propertyPath: flowValue
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114770492701998688, guid: 48e5f715e175854448899d9223a8b869,
-        type: 2}
-      propertyPath: scoreValue
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114070042157718722, guid: 48e5f715e175854448899d9223a8b869,
-        type: 2}
-      propertyPath: speedY
-      value: 0.1
-      objectReference: {fileID: 0}
+      propertyPath: soundEat
+      value: 
+      objectReference: {fileID: 1871815097}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48e5f715e175854448899d9223a8b869, type: 2}
   m_IsPrefabParent: 0
@@ -3962,29 +3918,14 @@ Prefab:
       objectReference: {fileID: 72961477}
     - target: {fileID: 114162330297302014, guid: caabfaac7cd0d3147a34ed7156adfa72,
         type: 2}
-      propertyPath: soundEat
-      value: 
-      objectReference: {fileID: 537750959}
-    - target: {fileID: 114162330297302014, guid: caabfaac7cd0d3147a34ed7156adfa72,
-        type: 2}
       propertyPath: soundLick
       value: 
       objectReference: {fileID: 2025475310}
     - target: {fileID: 114162330297302014, guid: caabfaac7cd0d3147a34ed7156adfa72,
         type: 2}
-      propertyPath: flowValue
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162330297302014, guid: caabfaac7cd0d3147a34ed7156adfa72,
-        type: 2}
-      propertyPath: scoreValue
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114544235138105246, guid: caabfaac7cd0d3147a34ed7156adfa72,
-        type: 2}
-      propertyPath: speedY
-      value: 0.1
-      objectReference: {fileID: 0}
+      propertyPath: soundEat
+      value: 
+      objectReference: {fileID: 537750959}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: caabfaac7cd0d3147a34ed7156adfa72, type: 2}
   m_IsPrefabParent: 0
@@ -4228,6 +4169,16 @@ Prefab:
       propertyPath: scorelabel
       value: 
       objectReference: {fileID: 1089377168}
+    - target: {fileID: 114665900674268358, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
+        type: 2}
+      propertyPath: tongueRetractSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 1247413370}
+    - target: {fileID: 114665900674268358, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
+        type: 2}
+      propertyPath: tongueRetractSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 2111296776}
     - target: {fileID: 114884940674578688, guid: 1fef342f717dddc4ba7c8ff756d3b6d0,
         type: 2}
       propertyPath: fillLeft
@@ -4330,6 +4281,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbc94946b644eb1479af3f5e880a712d, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &2111296776 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82221984500536810, guid: bd04e8b8c9dea8e408c81f53f42c9840,
+    type: 2}
+  m_PrefabInternal: {fileID: 1953387966}
 --- !u!1 &2135674420
 GameObject:
   m_ObjectHideFlags: 0

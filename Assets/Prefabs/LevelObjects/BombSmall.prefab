@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedX: 0
-  speedY: 0.2
+  speedY: 0.1
   isGood: 0
 --- !u!114 &114153045674588176
 MonoBehaviour:
