@@ -7,6 +7,8 @@ public class Pulsing : MonoBehaviour {
     [Range(0.0f, 1.0f)]
     public float phaseOffset = 0;
 
+    public float timeStretch = 1.0f;
+
     // Use this for initialization
     void Start()
     {
@@ -16,8 +18,8 @@ public class Pulsing : MonoBehaviour {
     void Update()
     {
         //Here we'll handle fading of instruments based on in-game progress.
-        float timeFactor = (Music.instance.baseMusic.time - phaseOffset) * Mathf.PI * 2 * (Music.BPM / 60.0f);
-        float pulse = Mathf.Sin(timeFactor);
+        float timeFactor = (Music.instance.baseMusic.time - phaseOffset + 0.4f) * Mathf.PI * 2 * (Music.BPM / 60.0f / 2);
+        float pulse = Mathf.Sin(timeFactor / timeStretch);
         pulse = pulse * 0.5f + 0.5f; //Transform from -1..1 to 0..1
         UpdatePulsing(pulse);
     }

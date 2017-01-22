@@ -12,8 +12,8 @@ namespace Assets.Gui.GamesLogic
     public class LevelObject : MonoBehaviour
     {
         private const float outofLevelY = 10;
-        public float speedX;
-        public float speedY;
+        float speedX = 0.0f;
+        float speedY = 0.3f;
         
         private MeshRenderer meshRenderer;
         private Vector2 velocity;

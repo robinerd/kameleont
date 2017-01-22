@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Music : MonoBehaviour {
 
-    public static float BPM = 101;
+    public static float BPM = 180;
     public static Music instance;
 
     public AudioSource baseMusic;

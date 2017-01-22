@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CurveGround
-  m_Shader: {fileID: 4800000, guid: 00ac3ad07f80eeb4ab92321f59846fe6, type: 3}
+  m_Name: backdrop_mat
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -48,13 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: afd8ca07de9dc0b47ba0034403fea437, type: 3}
-        m_Scale: {x: 10, y: 10}
-        m_Offset: {x: 0, y: 0}
-    - first:
-        name: _Mask
-      second:
-        m_Texture: {fileID: 2800000, guid: 868d4cd2eb43fbf4e8553eff0c7c7b18, type: 3}
+        m_Texture: {fileID: 2800000, guid: 304cf15d9f0d32042aed95adc5fff903, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -77,17 +71,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
-        name: _Blend
-      second: 1
+        name: PixelSnap
+      second: 0
     - first:
         name: _BumpScale
       second: 1
-    - first:
-        name: _Curv
-      second: 0.01
-    - first:
-        name: _Curvature
-      second: 0.01
     - first:
         name: _Cutoff
       second: 0.5
@@ -107,9 +95,6 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
-        name: _Grid
-      second: 1
-    - first:
         name: _Metallic
       second: 0
     - first:
@@ -127,12 +112,6 @@ Material:
     - first:
         name: _SpecularHighlights
       second: 1
-    - first:
-        name: _Square1
-      second: 0.75
-    - first:
-        name: _Square2
-      second: 0.75
     - first:
         name: _SrcBlend
       second: 1
