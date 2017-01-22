@@ -14,34 +14,25 @@ public class MainMenu : MonoBehaviour
 	private Boolean isLoading = false;
 
     public Text textHighScore;
-    private List<HighScorePerson> listHighScore;
     private Boolean isSaving = false;
 
     public bool isGameOverScreen;
     public Text scorevalue;
+    public Text HighScorePlayers;
 
     void Start ()
 	{
-        //initHighScore();
 
-        listHighScore = new List<HighScorePerson>();
-        //readHighScoreFile();
 
 	    int s = Score.score;
         if (scorevalue != null)
             scorevalue.text = s.ToString();
 
-	    if (isGameOverScreen)
+	    if (!isGameOverScreen)
 	    {
-	        initHighScore();
+	        ReadHighScore(); //Displays best of 5 players
 	    }
     }
-
-    private void LoadHighScores()
-    {
-        
-    }
-
 	// Update is called once per frame
 	void Update () {
 
@@ -60,20 +51,88 @@ public class MainMenu : MonoBehaviour
         }
 	}
 
-	private void initHighScore()
-	{
-		//Debug.Log("file: " + File.Exists("playerprogress/highscores.txt"));
-		if (!Directory.Exists("playerprogress"))
-		{
-			Directory.CreateDirectory("playerprogress");
-		}
+    private void ReadHighScore()
+    {
+        try
+        {
+            List<HighScorePerson> listPersons = new List<HighScorePerson>();
+            string[] scoreTexts = File.ReadAllLines("playerprogress/highscores.txt");
+            if (HighScorePlayers)
+            {
+                HighScorePlayers.text = "";
+                foreach (string line in scoreTexts)
+                {
+                    string scoreStr = "";
+                    int i = 0;
+                    for (i = 0; i < line.Length; i++)
+                    {
+                        if (line[i] != '#')
+                        {
+                            scoreStr += line[i];
+                        }
+                        else
+                        {
+                            i++;
+                            HighScorePerson person = new HighScorePerson();
+                            int.TryParse(scoreStr, out person.scoreNr);
+                            string scoreName = "";
+                            for (i = i; i < line.Length; i++)
+                            {
+                                scoreName += line[i];
+                            }
+                            person.Name = scoreName;
+                            listPersons.Add(person);
+                            break;
+                        }
+                    }
+                }
+                listPersons = sortListByNumber(listPersons); //Sorting!
 
-		if (!File.Exists("playerprogress/highscores.txt"))
-		{
-			File.Create("playerprogress/highscores.txt");
-		}
-		//string highscore = File.ReadAllText("playerprogress/highscores.txt");
-	}
+                //All players read, todo sort!
+                foreach (var person in listPersons)
+                {
+                    Debug.Log("PErson: " + "score: " + person.scoreNr + ": " + person.Name);
+                }
+
+                int maxRead = listPersons.Count;
+                if (maxRead > 6)
+                    maxRead = 6;
+
+                HighScorePlayers.text = "";
+                for (int j = 0; j < maxRead; j++)
+                {
+                    HighScorePlayers.text += listPersons[j].scoreNr + "" + listPersons[j].Name + "\n";
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Reading highscores: " + e);
+        }
+    }
+
+    private List<HighScorePerson> sortListByNumber(List<HighScorePerson> listPeople)
+    {
+        HighScorePerson t;
+        for (int j = 0; j <= listPeople.Count - 2; j++)
+        {
+            for (int i = 0; i <= listPeople.Count - 2; i++)
+            {
+                if (listPeople[i].scoreNr < listPeople[i + 1].scoreNr)
+                {
+                    t = listPeople[i + 1];
+                    listPeople[i + 1] = listPeople[i];
+                    listPeople[i] = t;
+                }
+            }
+        }
+        return listPeople;
+    }
+
+    private void sortScores()
+    {
+        
+    }
 
     public void ButtonStartGame()
     {
@@ -96,68 +155,4 @@ public class MainMenu : MonoBehaviour
 	{
 		Application.Quit();
 	}
-
-    private void readHighScoreFile()
-    {
-
-        StreamReader stream = File.OpenText("playerprogress" +
-            "/highscores.txt");
-        textHighScore.text = "";
-        int index = 0;
-        while (!stream.EndOfStream)
-        {
-            index = 0;
-            string line = stream.ReadLine();
-            //Debug.Log("line: " + line);
-            if (line == null)
-                break;
-
-            string scoreTxt = "";
-            string nameTxt = "";
-            while (index < line.Length && line[index] != ' ')
-            {
-                scoreTxt += line[index];
-                index++;
-            }
-            index += 2;
-            while (index < line.Length)
-            {
-                nameTxt += line[index];
-                index++;
-            }
-
-            try
-            {
-                float scoreNr;
-                float.TryParse(scoreTxt, out scoreNr);
-
-                HighScorePerson highScorePerson = new HighScorePerson(nameTxt, scoreNr);
-                listHighScore.Add(highScorePerson);
-            }
-            catch (Exception e)
-            {
-                Debug.Log("Exception MenuHighScore: " + e.ToString());
-            }
-        }
-
-        if (listHighScore.Count > 0)
-        {
-            textHighScore.text = "";
-            listHighScore = listHighScore.OrderBy(o => o.scoreNr).ToList(); //Amaaaziiiing
-            int nr = 1;
-            foreach (var person in listHighScore)
-            {
-                string s = "s";
-                if (person.scoreNr > 59)
-                {
-                    person.scoreNr = person.scoreNr / 60;
-                    s = "m";
-                }
-                textHighScore.text += nr.ToString() + ". " + person.Name + ": " + person.scoreNr.ToString("0.00") + s + "\n";
-                nr++;
-            }
-        }
-        stream.Close();
-    }
 }
-
