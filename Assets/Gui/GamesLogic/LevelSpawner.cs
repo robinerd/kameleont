@@ -9,7 +9,7 @@ namespace Assets.Gui.GamesLogic
 {
     public class LevelSpawner: MonoBehaviour
     {
-        private int percentageGoodRequired = 40;
+        private int percentageGoodRequired = 5;
         private float cooldownSpawn = 0;
 
         public float cooldownPerSpawn;
@@ -184,9 +184,9 @@ namespace Assets.Gui.GamesLogic
             }
 
             percentageGoodRequired += 1; //Per candy!
-            if (percentageGoodRequired >= 90)
+            if (percentageGoodRequired >= 70)
             {
-                percentageGoodRequired = 90; //at least 10% chance to get candy!
+                percentageGoodRequired = 70; //at least 10% chance to get candy!
             }
 
             Debug.Log("Cooldown:  " + cooldownPerSpawn);
