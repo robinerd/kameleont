@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour
 
 	    if (!isGameOverScreen)
 	    {
-	        if (Input.GetKeyDown("enter") || Input.GetKeyDown("return") || Input.GetButtonDown("GoToMainMenu"))
+	        if (Input.GetKeyDown("enter") || Input.GetKeyDown("return"))
 	        {
 	            ButtonStartGame();
 	        }
