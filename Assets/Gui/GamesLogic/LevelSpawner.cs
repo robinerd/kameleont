@@ -168,7 +168,7 @@ namespace Assets.Gui.GamesLogic
             //Current score values range from 5 to 25, so this sort of makes sense
             if (scoreAdd > 0)
             {
-                cooldownPerSpawn -= (scoreAdd/500);
+                cooldownPerSpawn -= 0.01f;
                 Debug.Log("Cooldown per spawn shortened by: " + scoreAdd / 500);
                 if (cooldownPerSpawn <= 0.05f)
                     cooldownPerSpawn = 0.05f;
@@ -181,10 +181,9 @@ namespace Assets.Gui.GamesLogic
                 //cooldownPerSpawn -= (scoreAdd/1000);
                 //if (cooldownPerSpawn > 3)
                 //    cooldownPerSpawn = 3;
-                Debug.Log("Cooldown per spawn increased by: " + scoreAdd / 1000);
             }
 
-            percentageGoodRequired += 5; //Per candy!
+            percentageGoodRequired += 1; //Per candy!
             if (percentageGoodRequired >= 90)
             {
                 percentageGoodRequired = 90; //at least 10% chance to get candy!

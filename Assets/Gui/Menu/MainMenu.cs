@@ -31,6 +31,15 @@ public class MainMenu : MonoBehaviour
         if (scorevalue != null)
             scorevalue.text = s.ToString();
 
+	    if (isGameOverScreen)
+	    {
+	        initHighScore();
+	    }
+    }
+
+    private void LoadHighScores()
+    {
+        
     }
 
 	// Update is called once per frame
@@ -50,8 +59,6 @@ public class MainMenu : MonoBehaviour
                 SceneManager.LoadScene("MainMenu");
         }
 	}
-
-	
 
 	private void initHighScore()
 	{
