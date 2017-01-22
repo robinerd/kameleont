@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23642846559836522}
   - component: {fileID: 114162330297302014}
   - component: {fileID: 114544235138105246}
+  - component: {fileID: 114411976449443072}
+  - component: {fileID: 114656623889657208}
   m_Layer: 0
   m_Name: Candy
   m_TagString: Untagged
@@ -122,13 +124,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac6019dd687a814e8bbda98bf534d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.3
+  radius: 0.8
   flowValue: 15
   scoreValue: 300
   isAttached: 0
   levelSpawner: {fileID: 0}
   soundLick: {fileID: 0}
   soundEat: {fileID: 0}
+--- !u!114 &114411976449443072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449927688816340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0e1d670320b1e49a666643d5d0b3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOffset: 0
+  minScale: 0.8
+  maxScale: 1.35
 --- !u!114 &114544235138105246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,6 +159,21 @@ MonoBehaviour:
   speedX: 0
   speedY: 0.2
   isGood: 1
+--- !u!114 &114656623889657208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449927688816340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617d39ddc8cea2440bcbc49b303e8c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOffset: 0
+  minAngle: 10
+  maxAngle: -6
+  axis: {x: 0, y: 1, z: 0}
 --- !u!212 &212959195649948194
 SpriteRenderer:
   m_ObjectHideFlags: 1

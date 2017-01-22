@@ -9,7 +9,7 @@ namespace Assets.Gui.GamesLogic
 {
     public class LevelSpawner: MonoBehaviour
     {
-        private int percentageGoodRequired = 5;
+        private int percentageGoodRequired = 40;
         private float cooldownSpawn = 0;
 
         public float cooldownPerSpawn;

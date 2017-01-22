@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23556239716915296}
   - component: {fileID: 114175180317648888}
   - component: {fileID: 114317034534772558}
+  - component: {fileID: 114111483809257182}
+  - component: {fileID: 114229927034585616}
   m_Layer: 0
   m_Name: CandySmall
   m_TagString: Untagged
@@ -111,6 +113,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113671971473744}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114111483809257182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1113671971473744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0e1d670320b1e49a666643d5d0b3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOffset: 0
+  minScale: 0.8
+  maxScale: 1.35
 --- !u!114 &114175180317648888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,13 +138,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac6019dd687a814e8bbda98bf534d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.3
+  radius: 0.8
   flowValue: 15
   scoreValue: 300
   isAttached: 0
   levelSpawner: {fileID: 0}
   soundLick: {fileID: 0}
   soundEat: {fileID: 0}
+--- !u!114 &114229927034585616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1113671971473744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617d39ddc8cea2440bcbc49b303e8c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseOffset: 0
+  minAngle: 10
+  maxAngle: -6
+  axis: {x: 0, y: 1, z: 0}
 --- !u!114 &114317034534772558
 MonoBehaviour:
   m_ObjectHideFlags: 1
