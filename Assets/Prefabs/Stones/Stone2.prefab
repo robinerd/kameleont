@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33315348573381862}
   - component: {fileID: 23178575792143976}
   - component: {fileID: 114077473257713040}
+  - component: {fileID: 64963327831425184}
+  - component: {fileID: 114261660279602750}
   m_Layer: 0
   m_Name: Low_Sten02
   m_TagString: Untagged
@@ -38,7 +40,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4824398113814100}
   - component: {fileID: 114987981042411040}
-  - component: {fileID: 114994868713186696}
   m_Layer: 0
   m_Name: Stone2
   m_TagString: Obstacle
@@ -111,6 +112,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638282804992616}
   m_Mesh: {fileID: 4300000, guid: 7d3128c47a74bf846be3f517c099ce8f, type: 3}
+--- !u!64 &64963327831425184
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638282804992616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 7d3128c47a74bf846be3f517c099ce8f, type: 3}
 --- !u!114 &114077473257713040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,6 +143,17 @@ MonoBehaviour:
   maxGrid: 0.9
   min: 0
   max: 1
+--- !u!114 &114261660279602750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638282804992616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6227fe57f385da34483c99a15b739d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114987981042411040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,14 +166,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGood: 0
---- !u!114 &114994868713186696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1927662097942436}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6227fe57f385da34483c99a15b739d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

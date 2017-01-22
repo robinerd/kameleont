@@ -35,7 +35,7 @@ Shader "Custom/CurveGround" {
 		vv.xyz -= _WorldSpaceCameraPos.xyz;
 
 		// one axis
-	 	vv = float4(0.0f, (vv.z * vv.z) * -_Curv, 0.0f, 0.0f);
+	 	vv = float4(0.0f, (vv.z * vv.z) * _Curv * 0, 0.0f, 0.0f);
 		// two
 		//vv = float4(0.0f, ((vv.z * vv.z) + (vv.x * vv.x)) * -_Curv, 0.0f, 0.0f);
 
