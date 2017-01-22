@@ -21,9 +21,13 @@ public class FlowMeter : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(calcFlowFactor() <= -1.00001f)
+        if (calcFlowFactor() <= -1.00001f)
         {
             GameOver();
+        }
+        else
+        {
+            checkGoBack();
         }
 
         flow = Mathf.Clamp(flow, -flowLimit, flowLimit);
@@ -79,5 +83,13 @@ public class FlowMeter : MonoBehaviour {
             multiplier = 0.1f;
 
         return multiplier;
+    }
+
+    private void checkGoBack()
+    {
+        if (Input.GetButtonDown("GoToMainMenu"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
