@@ -15,6 +15,7 @@ public class Tongue : MonoBehaviour {
     public float forwardAccelPerKeyPress = 0.08f;
 
     public AudioSource[] tongueRetractSounds;
+    public AudioSource hitStoneSound;
 
 
     Transform tongueTip = null;
@@ -144,5 +145,12 @@ public class Tongue : MonoBehaviour {
 
         tonguePart.GetComponent<Joint>().connectedBody = tongueTip.GetComponent<Rigidbody>();
         tongueTip = tonguePart;
+    }
+
+    public void HitObstacle()
+    {
+        Score.AddScore(-5000);
+        hitStoneSound.Play();
+        GetComponent<ParticleSystem>().Play();
     }
 }

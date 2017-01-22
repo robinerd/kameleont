@@ -8,15 +8,18 @@ namespace Assets.Gui.GamesLogic
 {
     public class StoneCollideChecker: MonoBehaviour
     {
+        Tongue tongueRoot;
         void Start()
         {
-
+            tongueRoot = GameObject.FindObjectOfType<Tongue>();
         }
 
         void Update() {
-            //if (Vector3.Distance(tongueRoot.transform.position, transform.position) < 1.2f)
+            Collider col = GetComponent<Collider>();
+            if(col && col.bounds.Contains(tongueRoot.transform.position))
             {
-                COMING SOON
+                tongueRoot.HitObstacle();
+                this.enabled = false;
             }
         }
     }
