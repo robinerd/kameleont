@@ -14,7 +14,7 @@ public class Tongue : MonoBehaviour {
     public float sidewaysAccelPerKeyPress = 0.2f; // Added to tongueDirection (always between -1 .. 1) per input press
     public float forwardAccelPerKeyPress = 0.08f;
 
-    public AudioSource soundToungeGoBackIn;
+    public AudioSource[] tongueRetractSounds;
 
 
     Transform tongueTip = null;
@@ -82,20 +82,27 @@ public class Tongue : MonoBehaviour {
 
         if (lickingInputCooldown <= 0.0f)
         {
-            if (!prevLicked)
+            if (prevLicked)
             {
-                soundToungeGoBackIn.Play();
-                prevLicked = true;
+                if (tongueRetractSounds.Length > 0)
+                {
+                    tongueRetractSounds[Random.Range(0, tongueRetractSounds.Length)].Play();
+                }
             }
             isLicking = false;
             tongueDirection = 0;
         }
 
+        Vector3 fromRootToTarget = tongueTarget.position - transform.position;
+
         Vector3 tongueTargetVelocity;
         if (isLicking)
         {
-            tongueTargetVelocity = Vector3.up * forwardMovementFactor * tongueSpeedForward + 
-                                   Vector3.right * tongueDirection * tongueSpeedSideways;
+            tongueTargetVelocity = Vector3.right * tongueDirection * tongueSpeedSideways;
+            if(fromRootToTarget.y < 20)
+            {
+                tongueTargetVelocity += Vector3.up * forwardMovementFactor * tongueSpeedForward;
+            }
         }
         else
         {
@@ -103,7 +110,6 @@ public class Tongue : MonoBehaviour {
         }
         tongueTarget.position += Time.deltaTime * tongueTargetVelocity;
 
-        Vector3 fromRootToTarget = tongueTarget.position - transform.position;
         float tongueLength = fromRootToTarget.magnitude * 1.1f; //make the tongue longer than needed to get a relaxed and slurpy touch.
         float tonguePartLength = tongueLength / numberOfTongueParts;
         for (int i = 0; i < numberOfTongueParts; i++)
@@ -115,6 +121,7 @@ public class Tongue : MonoBehaviour {
         Vector3 fromTipToTarget = tongueTarget.position - tongueTip.position;
         tongueTip.GetComponent<Rigidbody>().AddForce(fromTipToTarget * tongueMovementForce, ForceMode.Acceleration);
 
+        prevLicked = isLicking;
     }
 
 	void FixedUpdate () {

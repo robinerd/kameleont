@@ -409,7 +409,9 @@ MonoBehaviour:
   tongueSpeedForward: 3
   sidewaysAccelPerKeyPress: 0.18
   forwardAccelPerKeyPress: 0.1
-  soundToungeGoBackIn: {fileID: 0}
+  tongueRetractSounds:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114794537207652742
 MonoBehaviour:
   m_ObjectHideFlags: 1

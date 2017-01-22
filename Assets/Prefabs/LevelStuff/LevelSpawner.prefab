@@ -51,6 +51,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ed61e9802a6e2498eb69b776c1347f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownPerSpawn: 2
-  listGoodItems: []
-  listEvilItems: []
+  cooldownPerSpawn: 0.5
+  listGoodItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  listNeutral:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  listEvilItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  listSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
