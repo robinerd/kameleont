@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Sten_l_01_Dif
-  m_Shader: {fileID: 4800000, guid: be0cbaf100dfe5247a94af659f0b328c, type: 3}
+  m_Name: particleMaterial
+  m_Shader: {fileID: 4800000, guid: fec0082fe9fd33444962265a3dfbde39, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -40,21 +40,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
-        name: _EffectTex
-      second:
-        m_Texture: {fileID: 2800000, guid: d4b46c41209417a438cf0c38565d3aee, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 2800000, guid: d4b46c41209417a438cf0c38565d3aee, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: c17702bad8220e0459f5075fe7926c4c, type: 3}
+        m_Texture: {fileID: 2800000, guid: d539aebd0451151459b27394ecf4a00a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -77,14 +71,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
-        name: _Blend
-      second: 0
-    - first:
         name: _BumpScale
       second: 1
-    - first:
-        name: _Curv
-      second: 0.001
     - first:
         name: _Cutoff
       second: 0.5
@@ -95,16 +83,16 @@ Material:
         name: _DstBlend
       second: 0
     - first:
-        name: _Effect
-      second: 1
-    - first:
         name: _GlossMapScale
       second: 1
     - first:
         name: _Glossiness
-      second: 0
+      second: 0.5
     - first:
         name: _GlossyReflections
+      second: 1
+    - first:
+        name: _InvFade
       second: 1
     - first:
         name: _Metallic
@@ -139,4 +127,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _TintColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
