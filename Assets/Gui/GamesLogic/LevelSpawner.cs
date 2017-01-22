@@ -22,7 +22,8 @@ namespace Assets.Gui.GamesLogic
 
         //private List<LevelObject> listChildren;
 
-        private Boolean spawnForward = true; //false = reverse
+        private bool spawnForward = false; //false = reverse
+        private bool spawnRandom = true; //false = reverse
 
         private int spawnIndex;
 
@@ -61,7 +62,7 @@ namespace Assets.Gui.GamesLogic
 
             if (chance > percentageGoodRequired)
             {
-                SpawnNeutral();
+                SpawnGood();
             }
             else
             {
@@ -152,7 +153,13 @@ namespace Assets.Gui.GamesLogic
             }
             else if (spawnIndex < 0)
             {
-                spawnIndex = 0;
+                spawnIndex = listSpawnPoints.Count - 1;
+            }
+
+            if(spawnRandom)
+            {
+                //Ignore above things and overwrite with randomness
+                spawnIndex = Random.Range(0, listSpawnPoints.Count); //NOTE that the second parameter is EXCLUSIVE
             }
         }
 

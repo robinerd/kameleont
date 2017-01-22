@@ -123,10 +123,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.3
-  flowValue: 25
-  scoreValue: 25
+  flowValue: 15
+  scoreValue: 300
   isAttached: 0
   levelSpawner: {fileID: 0}
+  soundLick: {fileID: 0}
+  soundEat: {fileID: 0}
 --- !u!114 &114544235138105246
 MonoBehaviour:
   m_ObjectHideFlags: 1
