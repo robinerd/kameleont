@@ -24,6 +24,6 @@ public class PulsingGround : Pulsing {
     {
         material.SetFloat("_Square1", Mathf.Lerp(min1, max1, pulse));
         material.SetFloat("_Square2", Mathf.Lerp(max2, min2, pulse)); //Inverted order
-        material.SetFloat("_Grid", Mathf.Lerp(min1, max1, pulse));
+        material.SetFloat("_Grid", Mathf.Lerp(minGrid, maxGrid, pulse));
     }
 }
